@@ -562,6 +562,83 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
   .nav,.topbar,.wa-float,.strip{display:none}
   body{background:#fff;color:#000}
 }
+
+/* ============================================================
+   SISTEMA IMPECCABLE · Edición inline + feedback
+   Activar con: ?edit=1  o click en el botón flotante ✏️
+   ============================================================ */
+body.impeccable-on{outline:3px solid var(--accent);outline-offset:-3px}
+body.impeccable-on [data-imp-editable]{transition:outline-color .15s, background .15s;cursor:text}
+body.impeccable-on [data-imp-editable]:hover{outline:2px dashed var(--accent);outline-offset:3px;background:color-mix(in oklab, var(--accent) 6%, transparent)}
+body.impeccable-on [data-imp-editable][contenteditable="true"]{outline:2px solid var(--accent)!important;outline-offset:4px;background:color-mix(in oklab, var(--accent) 14%, transparent)}
+[data-imp-edited]::after{content:"";display:inline-block;width:5px;height:5px;background:var(--accent);border-radius:50%;margin-left:4px;vertical-align:middle}
+
+#impFab{
+  position:fixed;right:24px;bottom:96px;z-index:70;
+  width:50px;height:50px;border-radius:50%;
+  background:var(--ink);color:var(--accent);
+  border:2px solid var(--accent);cursor:pointer;
+  font-size:20px;
+  box-shadow:0 10px 28px -6px oklch(0 0 0 / .45);
+  transition:transform .2s var(--ease-out), background .2s, color .2s
+}
+#impFab:hover{transform:translateY(-2px) scale(1.05);background:var(--accent);color:var(--ink)}
+#impFab.on{background:var(--accent);color:var(--ink)}
+#impFab::after{content:"Click para editar";position:absolute;right:calc(100% + 12px);top:50%;transform:translateY(-50%) translateX(6px);
+  background:var(--ink);color:var(--bg);padding:7px 12px;border-radius:2px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;
+  opacity:0;pointer-events:none;transition:.25s;border:1px solid var(--rule-2)}
+#impFab:hover::after{opacity:1;transform:translateY(-50%) translateX(0)}
+#impFab.on::after{content:"Click para salir"}
+
+#impPanel{
+  position:fixed;left:24px;bottom:24px;z-index:70;
+  background:var(--ink);color:var(--bg);
+  padding:18px 20px;border-radius:4px;
+  font-family:var(--mono);font-size:12px;letter-spacing:.02em;
+  box-shadow:0 16px 40px -10px oklch(0 0 0 / .6);
+  max-width:360px;line-height:1.5;
+  border:1px solid var(--accent);
+  display:none
+}
+#impPanel.show{display:block;animation:impIn .25s var(--ease-out)}
+@keyframes impIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+#impPanel header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid color-mix(in oklab, white 12%, transparent)}
+#impPanel header strong{color:var(--accent);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+#impPanel header .close{background:transparent;border:0;color:color-mix(in oklab, var(--bg) 60%, transparent);cursor:pointer;font-size:16px;padding:0 4px;line-height:1}
+#impPanel header .close:hover{color:var(--bg)}
+#impCount{opacity:.78;margin-bottom:14px;font-size:11.5px}
+#impCount b{color:var(--accent);font-weight:600}
+#impActions{display:flex;gap:8px;flex-wrap:wrap}
+#impActions button{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  padding:8px 12px;cursor:pointer;border-radius:2px;border:1px solid transparent;
+  transition:.2s
+}
+#impActions .impExport{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+#impActions .impExport:hover{background:var(--bg);border-color:var(--bg)}
+#impActions .impApply{background:transparent;color:var(--good);border-color:var(--good)}
+#impActions .impApply:hover{background:var(--good);color:var(--ink)}
+#impActions .impReset{background:transparent;color:color-mix(in oklab, var(--bg) 70%, transparent);border-color:color-mix(in oklab, var(--bg) 25%, transparent)}
+#impActions .impReset:hover{color:var(--bg);border-color:var(--bg)}
+#impPanel .hint{margin-top:14px;padding-top:12px;border-top:1px solid color-mix(in oklab, white 10%, transparent);opacity:.6;font-size:11px;line-height:1.55}
+#impPanel .hint b{color:var(--accent);font-weight:500}
+
+#impToast{
+  position:fixed;left:50%;bottom:32px;z-index:80;
+  transform:translateX(-50%);
+  background:var(--good);color:var(--ink);
+  padding:12px 20px;border-radius:2px;
+  font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+  box-shadow:0 12px 32px -8px oklch(0 0 0 / .5);
+  opacity:0;pointer-events:none;transition:.3s
+}
+#impToast.show{opacity:1;transform:translateX(-50%) translateY(-4px)}
+
+@media (max-width:480px){
+  #impFab{right:14px;bottom:80px;width:44px;height:44px}
+  #impPanel{left:14px;right:14px;bottom:14px;max-width:none}
+}
 </style>
 </head>
 <body>
@@ -642,7 +719,7 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
       <div class="hero-bottom">
         <div class="hero-stat"><div class="n"><span data-count="50">0</span><sup>+</sup></div><div class="l">Años en planta</div></div>
         <div class="hero-stat"><div class="n"><span data-count="9">0</span></div><div class="l">Sectores atendidos</div></div>
-        <div class="hero-stat"><div class="n"><span data-count="0">0</span></div><div class="l">Trabajo físico</div></div>
+        <div class="hero-stat"><div class="n"><span data-count="200">0</span><sup>+</sup></div><div class="l">Proyectos ejecutados</div></div>
         <div class="hero-stat"><div class="n"><span data-count="3">0</span></div><div class="l">Modalidades de cobro</div></div>
       </div>
     </div>
@@ -663,21 +740,10 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
     <div class="manifesto-grid">
       <div class="eyebrow">§ 00 — Manifiesto</div>
       <div>
-        <h3>Antes <em>hacía</em>.<br/>Ahora <em>reviso</em>.</h3>
-        <p class="lead">Quince años de cuadrilla. Veinte dirigiendo. Diez y cinco más supervisando. Cincuenta en total. Una sola certeza: <em>los problemas que detienen una planta casi siempre se ven venir — si alguien con criterio los está mirando.</em></p>
+        <h3>50 años de experiencia, <em>una sola certeza</em>.</h3>
+        <p class="lead">Los problemas que detienen una planta casi siempre se ven venir — si alguien con criterio los está mirando.</p>
         <p>¿Tu último lazo de control, quién lo firma? ¿Tu residente? ¿El contratista? Ese momento donde el electricista dice que "ya terminó", el instrumentista dice que "ya calibró" y la curva en el DCS no cierra — ese es el momento donde entro yo.</p>
         <p>No instalo, no fabrico, no sueldo. <strong>Superviso.</strong> Soy el par técnico con criterio senior que tu equipo necesita cuando el plan no coincide con la planta. Y cuando coincide, lo confirmo con firma.</p>
-
-        <div class="split">
-          <div class="col before">
-            <h5>— Lo que hacía antes</h5>
-            <p>Cuadrilla, supervisión de obra, gerencia de proyectos, dirección de IEPI. Diseño, instalación, commissioning, dossier de calidad. De planta, en planta.</p>
-          </div>
-          <div class="col">
-            <h5>— Lo que hago ahora</h5>
-            <p>Supervisión externa. Asesor técnico. Revisión de ingeniería de detalle. Validación de pruebas. Un solo objetivo: que la entrega no tenga pendientes.</p>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -1317,6 +1383,210 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
 
 // 9) Console: crédito discreto
 console.log('%cVVC Consultoría · Sitio hecho con ♥ por ABDev', 'font-family:monospace;background:#0f1115;color:#f0a040;padding:6px 10px;border-radius:2px');
+
+// 10) Sistema Impeccable · edición inline + export JSON
+// Activar con: ?edit=1 en la URL  o  click en el botón flotante ✏️
+(function impeccable(){
+  const STORAGE_KEY = 'vvc-edits-v1';
+  const params = new URLSearchParams(location.search);
+  const autoEnable = params.get('edit') === '1';
+
+  // Estilos y elementos UI se inyectan al DOM
+  const fab = document.createElement('button');
+  fab.id = 'impFab';
+  fab.setAttribute('aria-label', 'Activar modo edición');
+  fab.innerHTML = '✏️';
+  document.body.appendChild(fab);
+
+  const panel = document.createElement('div');
+  panel.id = 'impPanel';
+  panel.innerHTML = `
+    <header>
+      <strong>Modo edición · VVC</strong>
+      <button class="close" aria-label="Cerrar panel">×</button>
+    </header>
+    <div id="impCount">0 cambios guardados en este navegador</div>
+    <div id="impActions">
+      <button class="impExport">💾 Exportar JSON</button>
+      <button class="impApply">📋 Copiar cambios</button>
+      <button class="impReset">↩ Reset</button>
+    </div>
+    <div class="hint">
+      <b>Doble-click</b> en cualquier texto para editarlo.<br>
+      <b>Enter</b> o <b>click fuera</b> para guardar.<br>
+      <b>Esc</b> para cancelar.<br>
+      Los cambios se guardan en este navegador. Expórtalos y mándamelos para aplicarlos al HTML permanente.
+    </div>
+  `;
+  document.body.appendChild(panel);
+
+  const toast = document.createElement('div');
+  toast.id = 'impToast';
+  document.body.appendChild(toast);
+
+  let edits = {};
+  try { edits = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e){ edits = {}; }
+  let enabled = false;
+
+  // Aplica los edits guardados al cargar
+  function applyStoredEdits(){
+    Object.entries(edits).forEach(([id, text])=>{
+      const el = document.querySelector(`[data-imp-id="${id}"]`);
+      if(el){
+        el.textContent = text;
+        el.setAttribute('data-imp-edited','');
+      }
+    });
+  }
+
+  // Marca todos los elementos editables
+  function setupEditable(){
+    const sel = 'h1, h2, h3, h4, h5, h6, p, li, a.cta, .eyebrow, .mono, .svc-foot span, .values span, .values h5, .tab-specs li, .mod-side p, .cta-card .v, .cta-card .l, .hero-stat .l, .leader-info span, .leader-info h4, .contact-info .block .l, .contact-info .block .v, .topbar .group span, .footer-grid h6, .footer-grid a, .footer-grid li, .footer-brand p, .footer-bottom div, .cta-foot, .svc-num, .svc-tag, .tab-visual .label, .tab-visual .corner-mark';
+    const targets = document.querySelectorAll(sel);
+    let i = 0;
+    targets.forEach(el=>{
+      if(el.closest('#impFab, #impPanel, #impToast, .wa-float, .topbar, .nav, dialog, .modalidad, .coverage, footer')) return;
+      if(el.children.length > 2) return; // skip elementos con muchos hijos (no son texto simple)
+      if(!el.dataset.impId) el.dataset.impId = 'v' + (++i);
+      el.setAttribute('data-imp-editable','');
+      el.addEventListener('dblclick', startEdit);
+    });
+  }
+
+  function startEdit(e){
+    if(!enabled) return;
+    const el = e.currentTarget;
+    if(el.contentEditable === 'true') return;
+    el.contentEditable = 'true';
+    el.focus();
+    // seleccionar todo el texto
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    el.addEventListener('blur', ()=>finishEdit(el), {once:true});
+    el.addEventListener('keydown', ev=>{
+      if(ev.key === 'Escape'){ ev.preventDefault(); el.textContent = el.dataset.original || el.textContent; el.blur(); }
+      if(ev.key === 'Enter' && !ev.shiftKey && el.tagName !== 'TEXTAREA'){ ev.preventDefault(); el.blur(); }
+    }, {once:true});
+  }
+
+  function finishEdit(el){
+    el.contentEditable = 'false';
+    const id = el.dataset.impId;
+    const newText = el.textContent.trim();
+    if(edits[id] !== newText){
+      edits[id] = newText;
+      el.setAttribute('data-imp-edited','');
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(edits));
+      showToast('Cambio guardado · ' + Object.keys(edits).length + ' en total');
+    }
+    updateCount();
+  }
+
+  function updateCount(){
+    const n = Object.keys(edits).length;
+    document.getElementById('impCount').innerHTML = n === 0
+      ? '0 cambios guardados en este navegador'
+      : `<b>${n}</b> cambio${n===1?'':'s'} guardado${n===1?'':'s'} en este navegador`;
+  }
+
+  function enable(){
+    enabled = true;
+    document.body.classList.add('impeccable-on');
+    fab.classList.add('on');
+    fab.innerHTML = '👁️';
+    fab.setAttribute('aria-label', 'Salir de modo edición');
+    panel.classList.add('show');
+    setupEditable();
+    updateCount();
+  }
+
+  function disable(){
+    enabled = false;
+    document.body.classList.remove('impeccable-on');
+    fab.classList.remove('on');
+    fab.innerHTML = '✏️';
+    fab.setAttribute('aria-label', 'Activar modo edición');
+    panel.classList.remove('show');
+    document.querySelectorAll('[contenteditable="true"]').forEach(el=>{
+      el.contentEditable = 'false';
+    });
+  }
+
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(()=>toast.classList.remove('show'), 2200);
+  }
+
+  // Exporta el JSON con todos los cambios
+  function exportJSON(){
+    const data = {
+      meta: {
+        site: 'victor.iepi.consulting',
+        exportedAt: new Date().toISOString(),
+        totalEdits: Object.keys(edits).length
+      },
+      edits: edits
+    };
+    const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `vvc-edits-${new Date().toISOString().slice(0,10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showToast('JSON exportado · revisa tu carpeta de descargas');
+  }
+
+  // Copia al portapapeles
+  async function copyToClipboard(){
+    const data = {
+      site: 'victor.iepi.consulting',
+      exportedAt: new Date().toISOString(),
+      edits: edits
+    };
+    const text = JSON.stringify(data, null, 2);
+    try{
+      await navigator.clipboard.writeText(text);
+      showToast('Cambios copiados al portapapeles');
+    }catch(e){
+      // fallback
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try{ document.execCommand('copy'); showToast('Cambios copiados al portapapeles'); }
+      catch(_){ showToast('No se pudo copiar · usa Exportar JSON'); }
+      document.body.removeChild(ta);
+    }
+  }
+
+  function resetEdits(){
+    const n = Object.keys(edits).length;
+    if(n === 0){ showToast('No hay cambios que limpiar'); return; }
+    if(!confirm(`¿Borrar ${n} cambio${n===1?'':'s'} local${n===1?'':'s'}? El HTML original volverá a verse.`)) return;
+    localStorage.removeItem(STORAGE_KEY);
+    showToast('Cambios limpiados · recargando...');
+    setTimeout(()=>location.reload(), 800);
+  }
+
+  // Event listeners
+  fab.addEventListener('click', ()=> enabled ? disable() : enable());
+  panel.querySelector('.close').addEventListener('click', disable);
+  panel.querySelector('.impExport').addEventListener('click', exportJSON);
+  panel.querySelector('.impApply').addEventListener('click', copyToClipboard);
+  panel.querySelector('.impReset').addEventListener('click', resetEdits);
+
+  // Inicializar
+  applyStoredEdits();
+  if(autoEnable) setTimeout(enable, 250);
+})();
 </script>
 </body>
 </html>
