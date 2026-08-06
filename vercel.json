@@ -2,38 +2,6 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/:path*",
-      "has": [
-        { "type": "host", "value": "victor.iepi.consulting" }
-      ],
-      "destination": "/consultoria/:path*"
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        { "type": "host", "value": "instrumentos.iepi.consulting" }
-      ],
-      "destination": "/instrumentos/:path*"
-    },
-    {
-      "source": "/instrumentos",
-      "destination": "/instrumentos"
-    },
-    {
-      "source": "/instrumentos/:path*",
-      "destination": "/instrumentos/:path*"
-    },
-    {
-      "source": "/consultoria",
-      "destination": "/consultoria"
-    },
-    {
-      "source": "/consultoria/:path*",
-      "destination": "/consultoria/:path*"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
