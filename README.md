@@ -1,7 +1,7 @@
 # iepi.consulting
 
 Sitio principal de **IEPI Consultoría · Víctor Vargas Carrillo**.
-Desplegado en GitHub Pages bajo el dominio personalizado **iepi.consulting**.
+Desplegado en **Vercel** bajo el dominio personalizado **iepi.consulting**.
 
 ---
 
@@ -15,37 +15,49 @@ Desplegado en GitHub Pages bajo el dominio personalizado **iepi.consulting**.
 ├── equipo/
 │   ├── index.html          # Catálogo de equipo IEPI en venta (Fluke + Additel)
 │   └── assets/             # Imágenes y manuales PDF del equipo
-├── CNAME                   # Dominio personalizado (iepi.consulting)
+├── vercel.json             # Config de Vercel (cleanUrls, headers, cache)
 └── .gitignore
 ```
 
 ## URLs
 
 - **Principal**: https://iepi.consulting/ → consultoría de Víctor
-- **Catálogo**: https://iepi.consulting/equipo/ → equipo de calibración en venta
+- **Catálogo**: https://iepi.consulting/equipo → equipo de calibración en venta
 
-## Despliegue
+## Despliegue en Vercel
 
-El sitio se sirve automáticamente desde la rama `main` mediante GitHub Pages.
-El dominio personalizado está configurado en el archivo `CNAME`.
+### 1) Importar el repo
+1. Ve a https://vercel.com/new
+2. Selecciona el repo `abalderasdev/iepi`
+3. Framework preset: **Other** (sitio estático)
+4. Build command: (vacío)
+5. Output directory: `.` (raíz)
+6. Click **Deploy**
 
-### Configuración DNS necesaria (en el proveedor de `consulting`)
+### 2) Asignar el dominio personalizado `iepi.consulting`
+1. Project Settings → Domains
+2. Escribe `iepi.consulting` → Add
+3. Vercel te muestra los registros DNS a configurar
 
-Si aún no la tienes, crea:
+### 3) DNS en el proveedor del dominio
+Donde compraste `consulting` (Namecheap, GoDaddy, Google Domains, etc.):
 
 | Tipo | Nombre | Valor |
 |---|---|---|
-| CNAME | `@` | `abalderasdev.github.io` |
-| CNAME | `www` | `abalderasdev.github.io` |
+| CNAME | `www` | `cname.vercel-dns.com.` |
+| A | `@` | `76.76.21.21` |
 
-(O registros A si prefieres apex):
-- `185.199.108.153`
-- `185.199.109.153`
-- `185.199.110.153`
-- `185.199.111.153`
+(También `A` secundario: `66.225.18.42` si tu proveedor pide dos registros A)
 
-Una vez propagado, en GitHub → Settings → Pages → Custom domain verás el check
-verde "DNS check in progress" pasar a "HTTPS supported".
+Vercel verifica automáticamente y emite el certificado TLS.
+
+## Verificación
+
+- [ ] `https://iepi.consulting/` carga con candado verde
+- [ ] La foto de Víctor aparece en "Sobre mí"
+- [ ] El WhatsApp flotante abre chat con número correcto
+- [ ] `https://iepi.consulting/equipo` carga el catálogo de instrumentos
+- [ ] Las imágenes del equipo se ven correctamente
 
 ## Stack técnico
 
@@ -53,16 +65,14 @@ verde "DNS check in progress" pasar a "HTTPS supported".
 - Sin frameworks, sin tracking, sin build step
 - Single-file por sección
 - Diseño responsivo (mobile, tablet, desktop)
+- **Vercel** para hosting + CDN global + TLS automático
 
 ## Mantenimiento
 
-Para actualizar:
-1. Edita el archivo correspondiente localmente
-2. `git add . && git commit -m "mensaje" && git push`
-3. GitHub Pages redespliega en ~30 segundos
-
-Para secciones del sitio principal, edita `/index.html`.
-Para el catálogo de equipo, edita `/equipo/index.html` (las imágenes viven en `/equipo/assets/`).
+Para actualizar el sitio:
+1. Edita localmente el archivo correspondiente
+2. `git add . && git commit -m "mensaje" && git push origin main`
+3. Vercel redespliega automáticamente en ~30 segundos
 
 ---
 
