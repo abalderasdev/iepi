@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>IEPI — Instrumentación y Electrosistemas en Procesos Industriales</title>
-<meta name="description" content="Más de 35 años de ingeniería de precisión en instalaciones eléctricas, instrumentación y sistemas de seguridad para la industria mexicana." />
+<meta name="description" content="Más de 35 años ejecutando proyectos de baja y media tensión, instrumentación, control, fibra óptica y sistemas de fuego y gas en la industria mexicana. Fundada y dirigida por el Ing. Víctor Vargas Carrillo, con 50 años de experiencia en planta." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -389,6 +389,24 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
 
+
+/* ---------- Impeccable · Boton X para eliminar secciones ---------- */
+[data-imp-section-id]{transition:opacity .2s}
+[data-imp-section-id][data-imp-hidden]{opacity:0;pointer-events:none}
+.imp-del{
+  position:absolute;top:8px;right:8px;z-index:999;
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(220,38,38,.95);color:#fff;
+  border:2px solid #fff;cursor:pointer;
+  font-size:18px;line-height:1;font-weight:700;
+  display:none;align-items:center;justify-content:center;
+  box-shadow:0 4px 12px rgba(0,0,0,.3);
+  transition:transform .15s, background .2s;
+  font-family:system-ui,-apple-system,sans-serif;
+}
+body.impeccable-on [data-imp-section-id]:hover .imp-del{display:flex}
+.imp-del:hover{background:rgba(239,68,68,1);transform:scale(1.1)}
+
 </style>
 </head>
 <body>
@@ -462,7 +480,7 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
         <div class="hero-stat"><div class="n">35<sup>+</sup></div><div class="l">Años en operación</div></div>
         <div class="hero-stat"><div class="n">200<sup>+</sup></div><div class="l">Proyectos ejecutados</div></div>
         <div class="hero-stat"><div class="n">8</div><div class="l">Sectores industriales</div></div>
-        <div class="hero-stat"><div class="n">0</div><div class="l">Incidentes 2024</div></div>
+        <div class="hero-stat"><div class="n">50<sup>+</sup></div><div class="l">Años del fundador</div></div>
       </div>
     </div>
   </div>
@@ -749,6 +767,8 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
       <div class="sec"><span class="ico">↗</span><span class="n">06 · AUTOMOTRIZ</span><h4>Automotriz</h4><p>Plantas de ensamble, pintura y tratamiento — alto throughput.</p></div>
       <div class="sec"><span class="ico">↗</span><span class="n">07 · CEMENTERA</span><h4>Cementera &amp; Papel</h4><p>Hornos, molinos y procesos abrasivos con instrumentación robusta.</p></div>
       <div class="sec"><span class="ico">↗</span><span class="n">08 · RENOVABLES</span><h4>Solar &amp; Renovables</h4><p>Campos fotovoltaicos a gran escala y plantas termosolares.</p></div>
+        <div class="sec"><span class="ico">↗</span><span class="n">09 · OFF-SHORE</span><h4>Plataformas marinas</h4><p>Sonda de Campeche, instrumentación en zona clasificada y comunicación remota.</p></div>
+        <div class="sec"><span class="ico">↗</span><span class="n">10 · LABORATORIO</span><h4>Laboratorios</h4><p>Calibración analítica, redes de gases especiales y trazabilidad NIST.</p></div>
     </div>
   </div>
 </section>
@@ -847,7 +867,7 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
 
     <div class="about-grid">
       <div>
-        <p class="lead">IEPI nace en 1990 con una idea sencilla: una sola firma capaz de entregar la parte eléctrica, instrumental y de seguridad de una planta — bajo un mismo dossier de calidad. Hoy somos referencia en sectores donde el error no es opción.</p>
+        <p class="lead">IEPI nace en 1990 con una idea sencilla: una sola firma capaz de entregar la parte eléctrica, instrumental y de seguridad de una planta — bajo un mismo dossier de calidad. Fundada y dirigida por el Ing. Víctor Vargas Carrillo, con 50 años de experiencia en planta. Hoy somos referencia en sectores donde el error no es opción.</p>
         <p>Operamos con un núcleo técnico estable y equipos rotativos que se forman específicamente para cada proyecto. Nuestra ventaja no es el tamaño: es la decisión de no diluir el criterio técnico. Cada cotización pasa por ingeniería senior, y cada cierre por validación independiente.</p>
         <div class="values">
           <div><h5>Calidad</h5><span>En cada proceso, producto y servicio.</span></div>
@@ -1068,6 +1088,301 @@ if(form){
     setTimeout(()=>{ btn.innerHTML = original; btn.disabled=false; btn.style.background=''; btn.style.borderColor=''; form.reset(); }, 3200);
   });
 }
+</script>
+<script>
+// 10) Sistema Impeccable · edición inline + export JSON
+// Activar con: ?edit=1 en la URL  o  click en el botón flotante ✏️
+(function impeccable(){
+  const STORAGE_KEY = 'iepi-edits-v1';
+  const params = new URLSearchParams(location.search);
+  const autoEnable = params.get('edit') === '1';
+
+  // Estilos y elementos UI se inyectan al DOM
+  const fab = document.createElement('button');
+  fab.id = 'impFab';
+  fab.setAttribute('aria-label', 'Activar modo edición');
+  fab.innerHTML = '✏️';
+  document.body.appendChild(fab);
+
+  const panel = document.createElement('div');
+  panel.id = 'impPanel';
+  panel.innerHTML = `
+    <header>
+      <strong>Modo edición · VVC</strong>
+      <button class="close" aria-label="Cerrar panel">×</button>
+    </header>
+    <div id="impCount">0 cambios guardados en este navegador</div>
+    <div id="impActions">
+      <button class="impExport">💾 Exportar JSON</button>
+      <button class="impApply">📋 Copiar cambios</button>
+      <button class="impReset">↩ Reset</button>
+    </div>
+    <div class="hint">
+      <b>Doble-click</b> en cualquier texto para editarlo.<br>
+      <b>Enter</b> o <b>click fuera</b> para guardar.<br>
+      <b>Esc</b> para cancelar.<br>
+      Los cambios se guardan en este navegador. Expórtalos y mándamelos para aplicarlos al HTML permanente.
+    </div>
+  `;
+  document.body.appendChild(panel);
+
+  const toast = document.createElement('div');
+  toast.id = 'impToast';
+  document.body.appendChild(toast);
+
+  let edits = {};
+  try { edits = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e){ edits = {}; }
+  let enabled = false;
+
+  // Aplica los edits guardados al cargar
+  function applyStoredEdits(){
+    Object.entries(edits).forEach(([id, html])=>{
+      const el = document.querySelector(`[data-imp-id="${id}"]`);
+      if(el){
+        el.innerHTML = html;
+        el.setAttribute('data-imp-edited','');
+      }
+    });
+  }
+
+  // Marca todos los elementos editables
+  function setupEditable(){
+    // Selectores: cualquier texto del contenido (NO chrome)
+    const sel = [
+      'h1','h2','h3','h4','h5','h6',
+      'p', 'li',
+      'a.cta', '.cta',
+      '.eyebrow', '.mono',
+      '.svc-foot span', '.svc h3', '.svc .desc',
+      '.values h5', '.values span', '.values div',
+      '.sec h4', '.sec p', '.sec .n',
+      '.mod-side h4', '.mod-side p', '.mod-display', '.mod-desc', '.mod-list li',
+      '.cta-card .v', '.cta-card .l', '.cta-card .v a',
+      '.hero-stat .l', '.hero-stat .n',
+      '.leader-info h4', '.leader-info span', '.leader-info .sig',
+      '.contact-info .block .l', '.contact-info .block .v',
+      '.hero-top .tag', '.hero-top .coords', '.hero-kicker',
+      '.section-head h2', '.section-head p', '.section-num',
+      '.manifesto h3', '.manifesto p', '.manifesto .lead'
+    ].join(',');
+    const targets = document.querySelectorAll(sel);
+    let i = 0;
+    targets.forEach(el=>{
+      // Excluir SOLO chrome (botones flotantes, navbar, dialog)
+      if(el.closest('#impFab, #impPanel, #impToast, .wa-float, .topbar, .nav, dialog')) return;
+      // Excluir si no tiene texto visible
+      const text = (el.textContent || '').trim();
+      if(text.length < 2) return;
+      // Asignar ID único
+      if(!el.dataset.impId) el.dataset.impId = 'v' + (++i);
+      el.setAttribute('data-imp-editable','');
+      el.addEventListener('dblclick', startEdit);
+    });
+    console.log('[impeccable] ' + targets.length + ' elementos editables');
+  }
+
+  function startEdit(e){
+    if(!enabled) return;
+    const el = e.currentTarget;
+    if(el.contentEditable === 'true') return;
+    // Guardar HTML original (preserva <strong>, <em>, etc.) para poder cancelar con Esc
+    el.dataset.originalHtml = el.innerHTML;
+    el.contentEditable = 'true';
+    el.focus();
+    // seleccionar todo el texto
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    el.addEventListener('blur', ()=>finishEdit(el), {once:true});
+    el.addEventListener('keydown', ev=>{
+      if(ev.key === 'Escape'){
+        ev.preventDefault();
+        if(el.dataset.originalHtml !== undefined) el.innerHTML = el.dataset.originalHtml;
+        el.blur();
+      }
+      if(ev.key === 'Enter' && !ev.shiftKey && el.tagName !== 'TEXTAREA'){
+        ev.preventDefault();
+        el.blur();
+      }
+    }, {once:true});
+  }
+
+  function finishEdit(el){
+    el.contentEditable = 'false';
+    const id = el.dataset.impId;
+    const newHtml = el.innerHTML.trim();
+    const originalHtml = el.dataset.originalHtml || '';
+    if(newHtml !== originalHtml){
+      edits[id] = newHtml;
+      el.setAttribute('data-imp-edited','');
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(edits));
+      showToast('Cambio guardado · ' + Object.keys(edits).length + ' en total');
+    }
+    updateCount();
+  }
+
+  function updateCount(){
+    const n = Object.keys(edits).length;
+    document.getElementById('impCount').innerHTML = n === 0
+      ? '0 cambios guardados en este navegador'
+      : `<b>${n}</b> cambio${n===1?'':'s'} guardado${n===1?'':'s'} en este navegador`;
+  }
+
+
+  // ---- Boton X para eliminar secciones ----
+  function setupDeleteButtons(){
+    const sel = 'section, article, .sec, .svc, .client, .card';
+    const targets = document.querySelectorAll(sel);
+    let count = 0;
+    targets.forEach(el => {
+      if(el.closest('#impFab, #impPanel, #impToast, .wa-float, .topbar, .nav, dialog, header, footer, .strip, .hero')) return;
+      if(el.dataset.impSectionId) return;
+      el.dataset.impSectionId = 's' + Math.random().toString(36).substr(2, 8);
+      el.style.position = 'relative';
+      const btn = document.createElement('button');
+      btn.className = 'imp-del';
+      btn.setAttribute('aria-label', 'Eliminar seccion');
+      btn.innerHTML = '\u00d7';
+      btn.title = 'Eliminar esta seccion (click otra vez para restaurar)';
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        e.preventDefault();
+        toggleSection(el);
+      });
+      el.appendChild(btn);
+      count++;
+    });
+    applyDeletedSections();
+    console.log('[impeccable] ' + count + ' secciones con boton X');
+  }
+
+  function toggleSection(el){
+    const id = el.dataset.impSectionId;
+    let hidden = JSON.parse(localStorage.getItem('iepi-hidden-v1') || '{}');
+    if(hidden[id]){
+      delete hidden[id];
+    } else {
+      hidden[id] = true;
+    }
+    localStorage.setItem('iepi-hidden-v1', JSON.stringify(hidden));
+    applyDeletedSections();
+    showToast(hidden[id] ? 'Seccion eliminada · ' + Object.keys(hidden).length + ' en total' : 'Seccion restaurada');
+  }
+
+  function applyDeletedSections(){
+    const hidden = JSON.parse(localStorage.getItem('iepi-hidden-v1') || '{}');
+    document.querySelectorAll('[data-imp-section-id]').forEach(el => {
+      if(hidden[el.dataset.impSectionId]){
+        el.style.display = 'none';
+        el.setAttribute('data-imp-hidden','');
+      } else {
+        el.style.display = '';
+        el.removeAttribute('data-imp-hidden');
+      }
+    });
+  }
+
+
+  function enable(){
+    enabled = true;
+    setupDeleteButtons();
+    document.body.classList.add('impeccable-on');
+    fab.classList.add('on');
+    fab.innerHTML = '👁️';
+    fab.setAttribute('aria-label', 'Salir de modo edición');
+    panel.classList.add('show');
+    setupEditable();
+    updateCount();
+  }
+
+  function disable(){
+    enabled = false;
+    document.body.classList.remove('impeccable-on');
+    fab.classList.remove('on');
+    fab.innerHTML = '✏️';
+    fab.setAttribute('aria-label', 'Activar modo edición');
+    panel.classList.remove('show');
+    document.querySelectorAll('[contenteditable="true"]').forEach(el=>{
+      el.contentEditable = 'false';
+    });
+  }
+
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(()=>toast.classList.remove('show'), 2200);
+  }
+
+  // Exporta el JSON con todos los cambios
+  function exportJSON(){
+    const data = {
+      meta: {
+        site: 'iepi.consulting',
+        exportedAt: new Date().toISOString(),
+        totalEdits: Object.keys(edits).length
+      },
+      edits: edits
+    };
+    const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `vvc-edits-${new Date().toISOString().slice(0,10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showToast('JSON exportado · revisa tu carpeta de descargas');
+  }
+
+  // Copia al portapapeles
+  async function copyToClipboard(){
+    const data = {
+      site: 'iepi.consulting',
+      exportedAt: new Date().toISOString(),
+      edits: edits
+    };
+    const text = JSON.stringify(data, null, 2);
+    try{
+      await navigator.clipboard.writeText(text);
+      showToast('Cambios copiados al portapapeles');
+    }catch(e){
+      // fallback
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try{ document.execCommand('copy'); showToast('Cambios copiados al portapapeles'); }
+      catch(_){ showToast('No se pudo copiar · usa Exportar JSON'); }
+      document.body.removeChild(ta);
+    }
+  }
+
+  function resetEdits(){
+    const n = Object.keys(edits).length;
+    if(n === 0){ showToast('No hay cambios que limpiar'); return; }
+    if(!confirm(`¿Borrar ${n} cambio${n===1?'':'s'} local${n===1?'':'s'}? El HTML original volverá a verse.`)) return;
+    localStorage.removeItem(STORAGE_KEY);
+    showToast('Cambios limpiados · recargando...');
+    setTimeout(()=>location.reload(), 800);
+  }
+
+  // Event listeners
+  fab.addEventListener('click', ()=> enabled ? disable() : enable());
+  panel.querySelector('.close').addEventListener('click', disable);
+  panel.querySelector('.impExport').addEventListener('click', exportJSON);
+  panel.querySelector('.impApply').addEventListener('click', copyToClipboard);
+  panel.querySelector('.impReset').addEventListener('click', resetEdits);
+
+  // Inicializar
+  applyDeletedSections();
+  applyStoredEdits();
+  if(autoEnable) setTimeout(enable, 250);
+})();
+
 </script>
 </body>
 </html>
