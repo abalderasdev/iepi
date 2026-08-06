@@ -1430,10 +1430,10 @@ console.log('%cVVC Consultoría · Sitio hecho con ♥ por ABDev', 'font-family:
 
   // Aplica los edits guardados al cargar
   function applyStoredEdits(){
-    Object.entries(edits).forEach(([id, text])=>{
+    Object.entries(edits).forEach(([id, html])=>{
       const el = document.querySelector(`[data-imp-id="${id}"]`);
       if(el){
-        el.textContent = text;
+        el.innerHTML = html;
         el.setAttribute('data-imp-edited','');
       }
     });
@@ -1441,22 +1441,48 @@ console.log('%cVVC Consultoría · Sitio hecho con ♥ por ABDev', 'font-family:
 
   // Marca todos los elementos editables
   function setupEditable(){
-    const sel = 'h1, h2, h3, h4, h5, h6, p, li, a.cta, .eyebrow, .mono, .svc-foot span, .values span, .values h5, .tab-specs li, .mod-side p, .cta-card .v, .cta-card .l, .hero-stat .l, .leader-info span, .leader-info h4, .contact-info .block .l, .contact-info .block .v, .topbar .group span, .footer-grid h6, .footer-grid a, .footer-grid li, .footer-brand p, .footer-bottom div, .cta-foot, .svc-num, .svc-tag, .tab-visual .label, .tab-visual .corner-mark';
+    // Selectores: cualquier texto del contenido (NO chrome)
+    const sel = [
+      'h1','h2','h3','h4','h5','h6',
+      'p', 'li',
+      'a.cta', '.cta',
+      '.eyebrow', '.mono',
+      '.svc-foot span', '.svc h3', '.svc .desc',
+      '.values h5', '.values span', '.values div',
+      '.tab-specs li', '.tab-copy h3', '.tab-copy p',
+      '.sec h4', '.sec p', '.sec .n',
+      '.mod-side h4', '.mod-side p', '.mod-display', '.mod-desc', '.mod-list li',
+      '.cta-card .v', '.cta-card .l', '.cta-card .v a',
+      '.hero-stat .l', '.hero-stat .n',
+      '.leader-info h4', '.leader-info span', '.leader-info .sig',
+      '.contact-info .block .l', '.contact-info .block .v',
+      '.tab-visual .label', '.tab-visual .corner-mark',
+      '.hero-top .tag', '.hero-top .coords', '.hero-kicker',
+      '.section-head h2', '.section-head p', '.section-num',
+      '.manifesto h3', '.manifesto p', '.manifesto .lead'
+    ].join(',');
     const targets = document.querySelectorAll(sel);
     let i = 0;
     targets.forEach(el=>{
-      if(el.closest('#impFab, #impPanel, #impToast, .wa-float, .topbar, .nav, dialog, .modalidad, .coverage, footer')) return;
-      if(el.children.length > 2) return; // skip elementos con muchos hijos (no son texto simple)
+      // Excluir SOLO chrome (botones flotantes, navbar, dialog)
+      if(el.closest('#impFab, #impPanel, #impToast, .wa-float, .topbar, .nav, dialog')) return;
+      // Excluir si no tiene texto visible
+      const text = (el.textContent || '').trim();
+      if(text.length < 2) return;
+      // Asignar ID único
       if(!el.dataset.impId) el.dataset.impId = 'v' + (++i);
       el.setAttribute('data-imp-editable','');
       el.addEventListener('dblclick', startEdit);
     });
+    console.log('[impeccable] ' + targets.length + ' elementos editables');
   }
 
   function startEdit(e){
     if(!enabled) return;
     const el = e.currentTarget;
     if(el.contentEditable === 'true') return;
+    // Guardar HTML original (preserva <strong>, <em>, etc.) para poder cancelar con Esc
+    el.dataset.originalHtml = el.innerHTML;
     el.contentEditable = 'true';
     el.focus();
     // seleccionar todo el texto
@@ -1467,17 +1493,25 @@ console.log('%cVVC Consultoría · Sitio hecho con ♥ por ABDev', 'font-family:
     sel.addRange(range);
     el.addEventListener('blur', ()=>finishEdit(el), {once:true});
     el.addEventListener('keydown', ev=>{
-      if(ev.key === 'Escape'){ ev.preventDefault(); el.textContent = el.dataset.original || el.textContent; el.blur(); }
-      if(ev.key === 'Enter' && !ev.shiftKey && el.tagName !== 'TEXTAREA'){ ev.preventDefault(); el.blur(); }
+      if(ev.key === 'Escape'){
+        ev.preventDefault();
+        if(el.dataset.originalHtml !== undefined) el.innerHTML = el.dataset.originalHtml;
+        el.blur();
+      }
+      if(ev.key === 'Enter' && !ev.shiftKey && el.tagName !== 'TEXTAREA'){
+        ev.preventDefault();
+        el.blur();
+      }
     }, {once:true});
   }
 
   function finishEdit(el){
     el.contentEditable = 'false';
     const id = el.dataset.impId;
-    const newText = el.textContent.trim();
-    if(edits[id] !== newText){
-      edits[id] = newText;
+    const newHtml = el.innerHTML.trim();
+    const originalHtml = el.dataset.originalHtml || '';
+    if(newHtml !== originalHtml){
+      edits[id] = newHtml;
       el.setAttribute('data-imp-edited','');
       localStorage.setItem(STORAGE_KEY, JSON.stringify(edits));
       showToast('Cambio guardado · ' + Object.keys(edits).length + ' en total');
