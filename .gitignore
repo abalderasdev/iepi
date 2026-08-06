@@ -1,0 +1,25 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs / node / build
+node_modules/
+*.log
+.cache/
+dist/
+build/
+
+# Privados / temporales
+.env
+.env.local
+*.bak
+*.tmp
+_preview/
