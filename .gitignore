@@ -1,25 +1,28 @@
-# Sistema
+# Sistema operativo
 .DS_Store
 Thumbs.db
-desktop.ini
 
-# Editores / OS
+# Archivos de editor
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
 
-# Logs / node / build
+# Dependencias (si en el futuro se agregan)
 node_modules/
-*.log
-.cache/
 dist/
 build/
 
-# Privados / temporales
+# Archivos de desarrollo
 .env
 .env.local
+
+# Temporales y backups
+tmp_*.py
 *.bak
-*.tmp
+*.online.bak
 _preview/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

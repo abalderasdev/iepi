@@ -1,61 +1,57 @@
-# victor.iepi.consulting
+# IEPI — Instrumentación y Electrosistemas en Procesos Industriales
 
-Sitio de **VVC Consultoría · Víctor Vargas Carrillo**.
-Desplegado en **Vercel** bajo el subdominio **`victor.iepi.consulting`**.
+Sitio web institucional de IEPI con tres secciones independientes, cada una con su propia URL.
 
----
-
-## Estructura
+## Estructura del proyecto
 
 ```
 .
-├── index.html              # Página principal: Víctor Vargas Carrillo (consultoría)
-├── assets/
-│   └── victor.jpg          # Foto del consultor
-├── equipo/
-│   ├── index.html          # Catálogo de equipo IEPI en venta (Fluke + Additel)
-│   └── assets/             # Imágenes y manuales PDF del equipo
-├── vercel.json             # Config de Vercel (cleanUrls, headers, cache)
-└── .gitignore
+├── index.html              # Corporativo IEPI (35 años)
+├── consultoria/            # Consultoría de Víctor Vargas
+│   ├── index.html
+│   └── assets/victor.jpg
+├── instrumentos/           # Catálogo de equipos en venta
+│   ├── index.html
+│   └── assets/             # Manuales PDF + fotos de productos
+├── vercel.json             # Config de Vercel
+└── README.md
 ```
 
 ## URLs
 
-- **Principal**: https://victor.iepi.consulting/ → consultoría de Víctor
-- **Catálogo**: https://victor.iepi.consulting/equipo → equipo de calibración en venta
+| URL                                          | Contenido                              |
+|----------------------------------------------|----------------------------------------|
+| `https://iepi.consulting/`                   | Corporativo IEPI (35 años)             |
+| `https://victor.iepi.consulting/`            | Consultoría de Víctor Vargas            |
+| `https://iepi.consulting/instrumentos`       | Catálogo de equipos en venta            |
 
 ## Despliegue en Vercel
 
 ### 1) Importar el repo
-1. Ve a https://vercel.com/new
+
+1. Ve a [https://vercel.com/new](https://vercel.com/new)
 2. Selecciona el repo `abalderasdev/iepi`
 3. Framework preset: **Other** (sitio estático)
 4. Build command: (vacío)
 5. Output directory: `.` (raíz)
 6. Click **Deploy**
 
-### 2) Asignar el subdominio `victor.iepi.consulting`
-1. Project Settings → Domains
-2. Escribe `victor.iepi.consulting` → Add
-3. Vercel te muestra el CNAME a configurar (típicamente `cname.vercel-dns.com`)
+### 2) Configurar los dominios
+
+En **Project Settings → Domains** agrega:
+
+- `iepi.consulting` → raíz del proyecto
+- `victor.iepi.consulting` → apunta a la raíz (mismo proyecto) **o** redirige a `/consultoria`
+- `iepi.consulting/instrumentos` → ya queda automático por la estructura de carpetas
 
 ### 3) DNS en el proveedor del dominio `consulting`
 
-| Tipo | Nombre | Valor |
-|---|---|---|
-| CNAME | `victor` | `cname.vercel-dns.com.` |
+| Tipo   | Nombre      | Valor                  |
+|--------|-------------|------------------------|
+| CNAME  | `@`         | `cname.vercel-dns.com.` |
+| CNAME  | `victor`    | `cname.vercel-dns.com.` |
 
-(Si Vercel te asigna un valor distinto, usa ese.)
-
-Vercel verifica automáticamente y emite el certificado TLS para `victor.iepi.consulting`.
-
-## Verificación
-
-- [ ] `https://victor.iepi.consulting/` carga con candado verde
-- [ ] La foto de Víctor aparece en "Sobre mí"
-- [ ] El WhatsApp flotante abre chat con número correcto
-- [ ] `https://victor.iepi.consulting/equipo` carga el catálogo de instrumentos
-- [ ] Las imágenes del equipo se ven correctamente
+Vercel verifica automáticamente y emite el certificado TLS.
 
 ## Stack técnico
 
@@ -68,6 +64,7 @@ Vercel verifica automáticamente y emite el certificado TLS para `victor.iepi.co
 ## Mantenimiento
 
 Para actualizar el sitio:
+
 1. Edita localmente el archivo correspondiente
 2. `git add . && git commit -m "mensaje" && git push origin main`
 3. Vercel redespliega automáticamente en ~30 segundos

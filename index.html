@@ -3,36 +3,16 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>VVC Consultoría · Víctor Vargas Carrillo · Supervisión Eléctrica e Instrumentación CDMX</title>
-<meta name="description" content="50 años supervisando proyectos eléctricos de baja y media tensión, instrumentación, control, fibra óptica y sistemas de fuego y gas. Calidad desde la instalación hasta el dossier. CDMX y Estado de México. Por hora, día o proyecto." />
-<meta name="keywords" content="supervisor de instrumentación, asesor eléctrico industrial, supervisor de obra eléctrica, baja tensión, media tensión, instrumentación y control, detección de fuego y gas, fibra óptica, cableado estructurado, dossier de calidad, CDMX, Estado de México, supervisión externa, auditoría técnica, pruebas y comisionamiento, consultoría industrial, Víctor Vargas Carrillo, IEPI" />
-<meta name="author" content="Víctor Vargas Carrillo" />
-<meta name="theme-color" content="#0f1115" />
-
-<!-- Open Graph -->
-<meta property="og:title" content="VVC Consultoría · Víctor Vargas Carrillo · Supervisión Industrial" />
-<meta property="og:description" content="50 años supervisando instrumentación, electricidad BT/MT, fibra óptica y sistemas F&G. Calidad desde la instalación hasta el dossier. CDMX y EdoMex." />
-<meta property="og:type" content="profile" />
-<meta property="og:url" content="https://victor.iepi.consulting/" />
-<meta property="og:locale" content="es_MX" />
-
-<link rel="canonical" href="https://victor.iepi.consulting/" />
+<title>IEPI — Instrumentación y Electrosistemas en Procesos Industriales</title>
+<meta name="description" content="Más de 35 años de ingeniería de precisión en instalaciones eléctricas, instrumentación y sistemas de seguridad para la industria mexicana." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
 
 <style>
-/* ============================================================
-   VVC CONSULTORÍA · Víctor Vargas Carrillo
-   Stack: HTML5 + CSS3 moderno (oklch, view-transitions, container-queries,
-   scroll-driven animations, anchor positioning, @scope, @property)
-   Single-file · sin frameworks · sin tracking
-   ============================================================ */
-
-/* ---------- Tokens (paleta IEPI coherente) ---------- */
+/* ---------- Tokens ---------- */
 :root{
-  /* color */
   --bg:        oklch(0.97 0.005 80);
   --bg-2:      oklch(0.93 0.006 80);
   --bg-3:      oklch(0.88 0.006 80);
@@ -46,54 +26,27 @@
   --steel:     oklch(0.40 0.040 245);
   --good:      oklch(0.66 0.150 145);
   --paper:     #f5f2ec;
-  --warn:      oklch(0.78 0.150 75);
-
-  /* type */
   --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --sans: "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sans: "Inter Tight", system-ui, -apple-system, Segoe UI, sans-serif;
   --serif:"Fraunces", Georgia, serif;
-
-  /* motion */
-  --ease-out: cubic-bezier(.2,.7,.2,1);
-  --ease-in-out: cubic-bezier(.6,.05,.3,.95);
-
-  /* layout */
-  --container: min(1320px, 100% - 48px);
-  --nav-h: 64px;
 }
 
-/* Modo oscuro preparado (light-dark) — desactivado por default, se activa con [data-theme="dark"] */
-[data-theme="dark"]{
-  --bg:        oklch(0.16 0.012 255);
-  --bg-2:      oklch(0.20 0.012 255);
-  --bg-3:      oklch(0.24 0.012 255);
-  --ink:       oklch(0.96 0.005 80);
-  --ink-2:     oklch(0.78 0.010 80);
-  --ink-3:     oklch(0.60 0.012 80);
-  --rule:      oklch(0.30 0.010 255);
-  --rule-2:    oklch(0.36 0.010 255);
-  --paper:     oklch(0.22 0.012 255);
-}
-
-/* ---------- Reset ---------- */
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 html{scroll-behavior:smooth}
-body{overflow-x:hidden;line-height:1.5}
-img,svg{display:block;max-width:100%}
+body{overflow-x:hidden}
+img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-button{font-family:inherit;cursor:pointer;border:0;background:transparent;color:inherit}
-
-::selection{background:var(--accent);color:var(--ink)}
+button{font-family:inherit;cursor:pointer}
 
 /* ---------- Helpers ---------- */
 .mono{font-family:var(--mono);letter-spacing:.02em}
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
 .rule{height:1px;background:var(--rule);border:0;width:100%}
-.container{width:var(--container); margin:0 auto}
+.container{width:min(1320px, 100% - 48px); margin:0 auto}
 @media (max-width:700px){.container{width:calc(100% - 28px)}}
 
-.section{padding:120px 0;position:relative;container-type:inline-size}
+.section{padding:120px 0;position:relative}
 .section-head{display:grid;grid-template-columns: 1fr 2fr;gap:48px;align-items:end;padding-bottom:48px;border-bottom:1px solid var(--rule)}
 .section-head h2{font-family:var(--sans);font-weight:600;font-size:clamp(38px,5vw,72px);letter-spacing:-0.03em;line-height:.98;margin:.2em 0 0}
 .section-head h2 em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--ink-2)}
@@ -102,7 +55,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:transparent;color:
 .section-num b{color:var(--accent);font-weight:600}
 @media (max-width:820px){.section-head{grid-template-columns:1fr;gap:18px}.section{padding:80px 0}}
 
-/* ---------- Top bar ---------- */
+/* ---------- Utility top bar ---------- */
 .topbar{
   background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:11.5px;
   letter-spacing:.04em;padding:8px 24px;display:flex;justify-content:space-between;gap:18px;align-items:center
@@ -111,115 +64,71 @@ button{font-family:inherit;cursor:pointer;border:0;background:transparent;color:
 @keyframes pulse{0%{box-shadow:0 0 0 0 oklch(0.66 0.15 145 / .6)}80%,100%{box-shadow:0 0 0 9px oklch(0.66 0.15 145 / 0)}}
 .topbar .group{display:flex;gap:22px;align-items:center;opacity:.92}
 .topbar .group span{display:inline-flex;align-items:center;gap:8px}
-.topbar a{transition:color .2s}
-.topbar a:hover{color:var(--accent)}
 @media (max-width:760px){.topbar{font-size:10.5px;padding:8px 14px}.topbar .group:nth-child(2){display:none}}
 
-/* ---------- Nav (sticky, glass) ---------- */
+/* ---------- Nav ---------- */
 .nav{
   position:sticky;top:0;z-index:50;background:color-mix(in oklab, var(--bg) 88%, transparent);
   backdrop-filter:saturate(140%) blur(14px);
-  -webkit-backdrop-filter:saturate(140%) blur(14px);
-  border-bottom:1px solid var(--rule);
-  view-transition-name: nav;
+  border-bottom:1px solid var(--rule)
 }
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;gap:18px}
 .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.02em}
-.brand .mark{
-  width:38px;height:38px;display:grid;place-items:center;
-  background:var(--ink);color:var(--bg);
-  font-family:var(--mono);font-size:12px;font-weight:600;
-  border-radius:2px;position:relative;letter-spacing:.04em
-}
+.brand .mark{width:34px;height:34px;display:grid;place-items:center;background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:13px;font-weight:600;border-radius:2px;position:relative}
 .brand .mark::before{content:"";position:absolute;inset:3px;border:1px solid color-mix(in oklab, var(--bg) 30%, transparent)}
 .brand .name{font-size:17px}
 .brand .sub{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:1px}
 .nav-links{display:flex;gap:6px;align-items:center}
-.nav-links a{padding:8px 14px;font-size:14px;color:var(--ink-2);border-radius:2px;transition:color .2s, background .2s}
+.nav-links a{padding:8px 14px;font-size:14px;color:var(--ink-2);border-radius:2px;transition:color .2s}
 .nav-links a:hover{color:var(--ink);background:var(--bg-2)}
 .cta{
   background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:2px;font-size:13.5px;font-weight:500;
-  display:inline-flex;align-items:center;gap:10px;border:1px solid var(--ink);
-  transition:transform .15s var(--ease-out), background .2s, border-color .2s, color .2s;
-  position:relative;overflow:hidden
+  display:inline-flex;align-items:center;gap:10px;border:1px solid var(--ink);transition:transform .15s, background .2s
 }
-.cta::after{content:"";position:absolute;inset:0;background:var(--accent);transform:translateY(100%);transition:transform .35s var(--ease-out);z-index:0}
-.cta > *{position:relative;z-index:1}
-.cta:hover{color:var(--ink);border-color:var(--accent)}
-.cta:hover::after{transform:translateY(0)}
+.cta:hover{background:var(--accent);border-color:var(--accent);color:var(--ink)}
 .cta .arrow{transition:transform .25s}
 .cta:hover .arrow{transform:translateX(3px)}
 .cta.outline{background:transparent;color:var(--ink);border-color:var(--ink)}
 .cta.outline:hover{background:var(--ink);color:var(--bg)}
-.cta.outline::after{background:var(--bg)}
-
-.nav-toggle{display:none;background:transparent;border:1px solid var(--rule-2);width:38px;height:38px;border-radius:2px;align-items:center;justify-content:center}
-.nav-toggle svg{width:18px;height:18px}
-@media (max-width:960px){
-  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);flex-direction:column;align-items:stretch;padding:14px 24px;border-bottom:1px solid var(--rule);gap:0}
-  .nav-links a{padding:14px 0;border-bottom:1px solid var(--rule)}
-  .nav-links a:last-child{border-bottom:0}
-  .nav-links.open{display:flex}
-  .nav-toggle{display:inline-flex}
-}
+@media (max-width:960px){.nav-links{display:none}}
 
 /* ---------- Hero ---------- */
-.hero{
-  position:relative;color:var(--bg);overflow:hidden;background:var(--ink);
-  min-height:min(94vh, 920px);
-  display:flex;flex-direction:column;
-}
-.hero::before{
-  content:"";position:absolute;inset:0;z-index:0;
-  background-image:
-    radial-gradient(circle at 20% 30%, oklch(0.70 0.180 48 / .14), transparent 50%),
-    radial-gradient(circle at 80% 70%, oklch(0.40 0.040 245 / .22), transparent 50%);
-  pointer-events:none
+.hero{position:relative;color:var(--bg);overflow:hidden;background:var(--ink)}
+.hero .bg{position:absolute;inset:0;z-index:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.02)}
+.hero .bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg, oklch(0.17 0.01 255 / .25) 0%, oklch(0.17 0.01 255 / .15) 40%, oklch(0.17 0.01 255 / .85) 100%),
+  linear-gradient(90deg, oklch(0.17 0.01 255 / .55) 0%, oklch(0.17 0.01 255 / 0) 60%);
 }
 .hero .grid-overlay{position:absolute;inset:0;z-index:1;background-image:
-  linear-gradient(to right, color-mix(in oklab, white 6%, transparent) 1px, transparent 1px),
-  linear-gradient(to bottom, color-mix(in oklab, white 6%, transparent) 1px, transparent 1px);
-  background-size: 80px 80px; mix-blend-mode:overlay; opacity:.5;pointer-events:none}
-/* .scan quitado — generaba ruido visual cruzando el hero */
-.hero-inner{position:relative;z-index:3;padding:120px 24px 60px;display:flex;flex-direction:column;justify-content:space-between;flex:1;gap:48px}
-.hero-top{display:flex;justify-content:space-between;gap:24px;align-items:start;flex-wrap:wrap}
+  linear-gradient(to right, color-mix(in oklab, white 8%, transparent) 1px, transparent 1px),
+  linear-gradient(to bottom, color-mix(in oklab, white 8%, transparent) 1px, transparent 1px);
+  background-size: 80px 80px; mix-blend-mode:overlay; opacity:.6;pointer-events:none}
+.hero-inner{position:relative;z-index:2;padding:130px 24px 64px;min-height:min(92vh, 880px);display:flex;flex-direction:column;justify-content:space-between}
+.hero-top{display:flex;justify-content:space-between;gap:24px;align-items:start}
 .hero-top .tag{
   display:inline-flex;align-items:center;gap:10px;border:1px solid color-mix(in oklab, white 30%, transparent);
-  padding:8px 14px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-  background:color-mix(in oklab, white 4%, transparent);backdrop-filter:blur(8px)
+  padding:8px 14px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase
 }
-.hero-top .tag::before{content:"";width:6px;height:6px;background:var(--accent);display:inline-block;border-radius:50%;box-shadow:0 0 8px var(--accent)}
+.hero-top .tag::before{content:"";width:6px;height:6px;background:var(--accent);display:inline-block;border-radius:50%}
 .hero-top .coords{font-family:var(--mono);font-size:11.5px;text-align:right;line-height:1.6;opacity:.85}
 .hero h1{
-  font-family:var(--sans);font-weight:600;
-  font-size:clamp(48px, 8.4vw, 138px);
-  line-height:.94;letter-spacing:-0.038em;
+  font-family:var(--sans);font-weight:600;font-size:clamp(56px, 8.6vw, 148px);line-height:.92;letter-spacing:-0.038em;
   margin:0;color:var(--bg);max-width:1200px
 }
-.hero h1 em{font-family:var(--serif);font-style:italic;font-weight:500;color:color-mix(in oklab, var(--accent) 92%, white)}
-.hero h1 .slash{color:var(--accent);font-weight:400;display:inline-block;transform:rotate(-12deg)}
-/* .caret y rotate quitados — distraían sin sumar */
-.hero-kicker{
-  font-family:var(--mono);font-size:13px;letter-spacing:.18em;text-transform:uppercase;
-  color:color-mix(in oklab, var(--accent) 92%, white);
-  margin:24px 0 0;display:flex;align-items:center;gap:14px
-}
-.hero-kicker::before{content:"";width:36px;height:1px;background:var(--accent);display:inline-block;flex-shrink:0}
-.hero-kicker span{font-weight:500}
-.hero-body{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:end;margin-top:auto}
+.hero h1 em{font-family:var(--serif);font-style:italic;font-weight:500;color:color-mix(in oklab, var(--accent) 90%, white)}
+.hero h1 .slash{color:var(--accent);font-weight:400}
+.hero-body{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:end;margin-top:20px}
 .hero-body p{font-size:19px;line-height:1.5;color:color-mix(in oklab, var(--bg) 90%, transparent);max-width:520px;margin:0}
-.hero-body p strong{color:var(--accent);font-weight:500}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .hero-actions .cta{background:var(--accent);border-color:var(--accent);color:var(--ink)}
 .hero-actions .cta:hover{background:var(--bg);border-color:var(--bg)}
 .hero-actions .cta.ghost{background:transparent;color:var(--bg);border-color:color-mix(in oklab, white 40%, transparent)}
 .hero-actions .cta.ghost:hover{background:var(--bg);color:var(--ink);border-color:var(--bg)}
-.hero-actions .cta.ghost::after{background:var(--bg)}
 @media (max-width:820px){.hero-body{grid-template-columns:1fr;gap:24px}}
 
 .hero-bottom{
-  display:grid;grid-template-columns:repeat(4, 1fr);gap:0;
-  border-top:1px solid color-mix(in oklab, white 18%, transparent);
+  display:grid;grid-template-columns:repeat(4, 1fr);gap:0;border-top:1px solid color-mix(in oklab, white 18%, transparent);
   margin-top:48px;padding-top:22px
 }
 .hero-stat{padding-right:22px;border-right:1px solid color-mix(in oklab, white 14%, transparent)}
@@ -229,245 +138,235 @@ button{font-family:inherit;cursor:pointer;border:0;background:transparent;color:
 .hero-stat .l{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:color-mix(in oklab, var(--bg) 70%, transparent);margin-top:10px}
 @media (max-width:820px){.hero-bottom{grid-template-columns:repeat(2,1fr);gap:20px 0}.hero-stat{padding:14px 0;border-right:0;border-bottom:1px solid color-mix(in oklab, white 14%, transparent)}.hero-stat:last-child{border-bottom:0}}
 
-/* ---------- Strip (marquee) ---------- */
-.strip{background:var(--ink);color:var(--bg);overflow:hidden;border-bottom:1px solid color-mix(in oklab, white 8%, transparent);border-top:1px solid color-mix(in oklab, white 8%, transparent)}
-.strip-track{display:flex;gap:48px;padding:18px 0;animation:slide 60s linear infinite;white-space:nowrap;font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:color-mix(in oklab, var(--bg) 80%, transparent)}
-.strip:hover .strip-track{animation-play-state:paused}
+/* ---------- Marquee strip ---------- */
+.strip{background:var(--ink);color:var(--bg);overflow:hidden;border-bottom:1px solid color-mix(in oklab, white 8%, transparent)}
+.strip-track{display:flex;gap:48px;padding:18px 0;animation:slide 50s linear infinite;white-space:nowrap;font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:color-mix(in oklab, var(--bg) 80%, transparent)}
 .strip-track span::before{content:"◇";color:var(--accent);margin-right:46px;font-size:9px;vertical-align:middle}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ---------- Manifiesto ---------- */
-.manifesto{padding:120px 0 80px;background:var(--bg)}
-.manifesto-grid{display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start;container-type:inline-size}
-.manifesto h3{font-family:var(--sans);font-weight:500;font-size:clamp(28px,3.4vw,48px);line-height:1.05;letter-spacing:-0.028em;margin:0;color:var(--ink)}
-.manifesto h3 em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--accent-2)}
-.manifesto p{font-size:17px;line-height:1.65;color:var(--ink-2);max-width:62ch;margin:0 0 18px}
-.manifesto p.lead{font-family:var(--serif);font-size:clamp(22px,2.4vw,28px);line-height:1.35;color:var(--ink);font-weight:400;max-width:30ch;margin-bottom:24px}
-.manifesto .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:32px;border-top:1px solid var(--rule);padding-top:32px}
-.manifesto .col h5{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin:0 0 14px}
-.manifesto .col p{font-size:15.5px}
-.manifesto .col.before{border-right:1px solid var(--rule);padding-right:32px}
-@container (max-width: 760px){
-  .manifesto .split{grid-template-columns:1fr;gap:32px}
-  .manifesto .col.before{border-right:0;padding-right:0;border-bottom:1px solid var(--rule);padding-bottom:24px}
-}
-@media (max-width:820px){.manifesto-grid{grid-template-columns:1fr;gap:36px}.manifesto .split{grid-template-columns:1fr;gap:24px}.manifesto .col.before{border-right:0;padding-right:0}}
+/* ---------- Intro: brief + meta ---------- */
+.intro{padding:96px 0 64px;background:var(--bg)}
+.intro-grid{display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start}
+.intro h3{font-family:var(--sans);font-weight:500;font-size:clamp(28px,3.2vw,44px);line-height:1.05;letter-spacing:-0.025em;margin:0;max-width:680px;color:var(--ink)}
+.intro h3 em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--accent-2)}
+.intro .meta{display:flex;flex-direction:column;gap:12px;border-left:1px solid var(--rule);padding-left:24px}
+.intro .meta div{display:grid;grid-template-columns: 100px 1fr;gap:14px;font-family:var(--mono);font-size:12px;color:var(--ink-2);align-items:baseline}
+.intro .meta div span:first-child{color:var(--ink-3);letter-spacing:.14em;text-transform:uppercase;font-size:10.5px}
+@media (max-width:820px){.intro-grid{grid-template-columns:1fr}}
 
-/* ---------- Servicios (cards) ---------- */
-#servicios{background:var(--bg-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.services{display:grid;grid-template-columns:repeat(12, 1fr);gap:24px;margin-top:56px;container-type:inline-size}
+/* ---------- Services ---------- */
+#servicios{background:var(--bg)}
+.services{display:grid;grid-template-columns:repeat(12, 1fr);gap:24px;margin-top:56px}
 .svc{
   grid-column:span 6;background:var(--paper);border:1px solid var(--rule);position:relative;
-  display:grid;grid-template-rows:auto 1fr auto;min-height:420px;overflow:hidden;
-  transition:transform .35s var(--ease-out), box-shadow .35s, border-color .25s
+  display:grid;grid-template-rows:auto auto 1fr auto;min-height:480px;overflow:hidden;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s
 }
-.svc:hover{transform:translateY(-3px);box-shadow:0 18px 40px -22px oklch(0.17 0.01 255 / .25);border-color:var(--ink-3)}
-.svc .corner{position:absolute;width:14px;height:14px;border-color:var(--ink);pointer-events:none;transition:border-color .25s}
+.svc:nth-child(3){grid-column:span 12;grid-template-rows: 1fr; min-height:280px;display:grid;grid-template-columns: 1.2fr 1fr}
+.svc:nth-child(3) .svc-body{padding:38px}
+.svc:nth-child(3) .svc-img{position:relative;aspect-ratio: unset;min-height:280px;border-left:1px solid var(--rule);border-top:0}
+.svc:hover{transform:translateY(-3px);box-shadow:0 18px 40px -22px oklch(0.17 0.01 255 / .25)}
+.svc .corner{position:absolute;width:14px;height:14px;border-color:var(--ink);pointer-events:none}
 .svc .corner.tl{top:10px;left:10px;border-top:1.5px solid var(--ink);border-left:1.5px solid var(--ink)}
 .svc .corner.tr{top:10px;right:10px;border-top:1.5px solid var(--ink);border-right:1.5px solid var(--ink)}
 .svc .corner.bl{bottom:10px;left:10px;border-bottom:1.5px solid var(--ink);border-left:1.5px solid var(--ink)}
 .svc .corner.br{bottom:10px;right:10px;border-bottom:1.5px solid var(--ink);border-right:1.5px solid var(--ink)}
-.svc:hover .corner{border-color:var(--accent)}
-.svc-head{padding:30px 32px 0;display:flex;justify-content:space-between;align-items:start;gap:14px}
-.svc-head .num{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--ink-3);text-transform:uppercase}
-.svc-head .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--ink);background:var(--accent);padding:4px 8px;text-transform:uppercase}
-.svc-body{padding:24px 32px 8px}
-.svc h3{font-family:var(--sans);font-weight:600;font-size:28px;letter-spacing:-0.02em;margin:0 0 10px;line-height:1.08}
+.svc-img{position:relative;aspect-ratio: 16/9;overflow:hidden;border-bottom:1px solid var(--rule);background:var(--bg-3)}
+.svc-img .clip{position:absolute;inset:0;overflow:hidden}
+.svc-img .clip img{width:100%;height:100%;object-fit:cover;filter:saturate(.94)}
+.svc-img .num{position:absolute;left:18px;top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--bg);background:var(--ink);padding:5px 9px;text-transform:uppercase}
+.svc-img .tag{position:absolute;right:18px;bottom:18px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--bg);background:var(--accent);color:var(--ink);padding:4px 8px;text-transform:uppercase}
+.svc-body{padding:30px 32px}
+.svc h3{font-family:var(--sans);font-weight:600;font-size:30px;letter-spacing:-0.02em;margin:0 0 10px;line-height:1.06}
 .svc h3 em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--accent-2)}
-.svc .desc{margin:0;color:var(--ink-2);font-size:15.5px;line-height:1.55;max-width:56ch}
-.svc-list{list-style:none;margin:20px 32px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 18px}
+.svc p{margin:0;color:var(--ink-2);font-size:15px;line-height:1.55;max-width:54ch}
+.svc-list{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 18px}
 .svc-list li{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);letter-spacing:.03em;display:flex;gap:8px;align-items:baseline}
 .svc-list li::before{content:"▸";color:var(--accent);font-size:9px}
 .svc-foot{padding:18px 32px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);display:flex;justify-content:space-between;align-items:center}
-.svc-foot a{color:var(--ink);display:inline-flex;gap:8px;align-items:center;transition:gap .2s, color .2s}
+.svc-foot a{color:var(--ink);display:inline-flex;gap:8px;align-items:center;transition:gap .2s}
 .svc-foot a:hover{gap:14px;color:var(--accent-2)}
+@media (max-width:900px){.svc{grid-column:span 12!important;grid-template-columns:1fr!important}.svc:nth-child(3) .svc-img{border-left:0;border-top:1px solid var(--rule)}}
 
-@container (max-width: 760px){
-  .svc{grid-column:span 12!important}
-  .svc-list{grid-template-columns:1fr!important}
+/* ---------- Projects ---------- */
+#proyectos{background:var(--bg-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.proj-controls{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:32px;flex-wrap:wrap}
+.proj-filters{display:flex;flex-wrap:wrap;gap:6px}
+.proj-filters button{
+  background:transparent;border:1px solid var(--rule-2);padding:8px 14px;font-family:var(--mono);font-size:11.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);border-radius:2px;transition:.2s
 }
+.proj-filters button:hover{border-color:var(--ink-2);color:var(--ink)}
+.proj-filters button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.proj-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.card{
+  grid-column:span 4;background:var(--paper);border:1px solid var(--rule);position:relative;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1)
+}
+.card:hover{transform:translateY(-3px)}
+.card.big{grid-column:span 8;grid-row:span 2}
+.card.wide{grid-column:span 8}
+.card.tall{grid-column:span 4;grid-row:span 2}
+.card-img{position:relative;flex:1;overflow:hidden;background:var(--bg-3);min-height:240px}
+.card.big .card-img{min-height:520px}
+.card.tall .card-img{min-height:540px}
+.card-img .clip{position:absolute;inset:0;overflow:hidden}
+.card-img .clip img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.card:hover .card-img .clip img{transform:scale(1.05)}
+.card-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 40%, oklch(0.17 0.01 255 / .82) 100%)}
+.card-meta{position:absolute;left:18px;top:18px;display:flex;gap:6px;z-index:2}
+.tag-pill{background:color-mix(in oklab, var(--ink) 80%, transparent);color:var(--bg);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:5px 8px;backdrop-filter: blur(8px)}
+.tag-pill.accent{background:var(--accent);color:var(--ink)}
+.card-body{position:absolute;left:22px;right:22px;bottom:18px;z-index:2;color:var(--bg)}
+.card-body h4{font-family:var(--sans);font-weight:500;font-size:22px;letter-spacing:-0.015em;margin:0 0 4px;line-height:1.1}
+.card.big .card-body h4{font-size:32px}
+.card-body .where{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.card-spec{position:absolute;right:18px;top:18px;font-family:var(--mono);font-size:10.5px;color:var(--bg);text-align:right;line-height:1.4;opacity:.85;z-index:2}
+@media (max-width:900px){.card,.card.big,.card.wide,.card.tall{grid-column:span 12}.card.big .card-img,.card.tall .card-img{min-height:320px}}
 
-/* ---------- Sectores ---------- */
-.sectors-sec{background:var(--bg-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.sector-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:0;margin-top:48px;border-top:1px solid var(--rule);border-left:1px solid var(--rule);container-type:inline-size}
-.sec{padding:36px 28px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);position:relative;transition:background .25s, transform .25s;cursor:default}
+/* ---------- Sectors ---------- */
+.sectors{background:var(--bg)}
+.sector-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.sec{padding:36px 28px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);position:relative;transition:background .25s}
 .sec:hover{background:var(--paper)}
-.sec .n{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--ink-3);text-transform:uppercase;display:flex;align-items:center;gap:10px}
-.sec .n svg{width:18px;height:18px;color:var(--accent);flex-shrink:0}
-.sec h4{font-family:var(--sans);font-weight:500;font-size:22px;letter-spacing:-0.015em;line-height:1.08;margin:14px 0 6px;color:var(--ink)}
-.sec p{font-size:13.5px;color:var(--ink-2);margin:0;line-height:1.5}
-@container (max-width: 760px){
-  .sector-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media (max-width:560px){
-  .sector-grid{grid-template-columns:1fr}
-}
+.sec .n{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--ink-3);text-transform:uppercase}
+.sec h4{font-family:var(--sans);font-weight:500;font-size:24px;letter-spacing:-0.015em;line-height:1.05;margin:18px 0 8px;color:var(--ink)}
+.sec p{font-size:14px;color:var(--ink-2);margin:0;line-height:1.5}
+.sec .ico{position:absolute;right:22px;top:24px;font-family:var(--mono);font-size:10px;color:var(--accent)}
+@media (max-width:900px){.sector-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.sector-grid{grid-template-columns:1fr}}
 
-/* ---------- Modalidad de cobro (toggle) ---------- */
-.modalidad{background:var(--bg)}
-.mod-wrap{margin-top:48px;border:1px solid var(--rule);background:var(--paper);padding:48px;display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:center;container-type:inline-size}
-.mod-toggle{
-  display:inline-flex;gap:0;background:var(--bg-3);border:1px solid var(--rule-2);
-  padding:4px;border-radius:2px;margin-bottom:24px
+/* ---------- Clients ---------- */
+.clients{background:var(--ink);color:var(--bg)}
+.clients .section-head{border-bottom-color:color-mix(in oklab, white 15%, transparent)}
+.clients .section-head h2{color:var(--bg)}
+.clients .section-head h2 em{color:color-mix(in oklab, var(--bg) 70%, transparent)}
+.clients .section-head p{color:color-mix(in oklab, var(--bg) 75%, transparent)}
+.clients .section-num{color:color-mix(in oklab, var(--bg) 60%, transparent)}
+.client-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:48px;border-top:1px solid color-mix(in oklab, white 15%, transparent);border-left:1px solid color-mix(in oklab, white 15%, transparent)}
+.client{
+  border-right:1px solid color-mix(in oklab, white 15%, transparent);border-bottom:1px solid color-mix(in oklab, white 15%, transparent);
+  padding:30px 18px;min-height:130px;display:flex;flex-direction:column;justify-content:space-between;
+  transition:background .2s
 }
-.mod-toggle button{
-  font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
-  padding:10px 18px;color:var(--ink-2);border-radius:2px;transition:.25s;position:relative
-}
-.mod-toggle button.on{background:var(--ink);color:var(--bg)}
-.mod-display{font-family:var(--sans);font-size:clamp(38px,5vw,64px);font-weight:600;letter-spacing:-0.025em;line-height:1;color:var(--ink);margin:8px 0 12px}
-.mod-display .currency{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--accent-2);margin-right:6px}
-.mod-display .unit{font-family:var(--mono);font-size:18px;font-weight:400;color:var(--ink-3);margin-left:8px;letter-spacing:.05em}
-.mod-desc{color:var(--ink-2);font-size:16px;line-height:1.6;max-width:44ch;margin:0 0 18px}
-.mod-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.mod-list li{font-family:var(--mono);font-size:12px;color:var(--ink-2);display:flex;gap:10px;align-items:baseline}
-.mod-list li::before{content:"✓";color:var(--good);font-weight:700}
-.mod-side h4{font-family:var(--sans);font-weight:600;font-size:18px;margin:0 0 14px;letter-spacing:-0.01em}
-.mod-side p{color:var(--ink-2);font-size:14.5px;line-height:1.6;margin:0 0 12px}
-.mod-cta{background:var(--ink);color:var(--bg);padding:14px 22px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-top:14px;border:1px solid var(--ink);transition:.2s}
-.mod-cta:hover{background:var(--accent);color:var(--ink);border-color:var(--accent)}
-@container (max-width: 760px){
-  .mod-wrap{grid-template-columns:1fr;gap:32px;padding:28px}
-}
+.client:hover{background:color-mix(in oklab, white 4%, transparent)}
+.client .nm{font-family:var(--sans);font-weight:600;font-size:22px;letter-spacing:-0.015em;color:var(--bg)}
+.client .sct{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:color-mix(in oklab, var(--bg) 55%, transparent);margin-top:auto}
+@media (max-width:900px){.client-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.client-grid{grid-template-columns:repeat(2,1fr)}}
 
-/* ---------- Cobertura ---------- */
-.coverage{background:var(--ink);color:var(--bg);position:relative;overflow:hidden}
-.coverage::before{content:"";position:absolute;inset:0;background-image:
-  radial-gradient(circle at 30% 50%, oklch(0.70 0.180 48 / .12), transparent 60%),
-  radial-gradient(circle at 80% 30%, oklch(0.40 0.040 245 / .18), transparent 60%);
-  pointer-events:none
-}
-.coverage .section-head{border-bottom-color:color-mix(in oklab, white 15%, transparent);position:relative;z-index:2}
-.coverage .section-head h2{color:var(--bg)}
-.coverage .section-head h2 em{color:color-mix(in oklab, var(--accent) 90%, white)}
-.coverage .section-head p{color:color-mix(in oklab, var(--bg) 75%, transparent)}
-.coverage .section-num{color:color-mix(in oklab, var(--bg) 60%, transparent)}
-.cov-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:0;margin-top:48px;border-top:1px solid color-mix(in oklab, white 15%, transparent);border-left:1px solid color-mix(in oklab, white 15%, transparent);position:relative;z-index:2}
-.cov{padding:32px 26px;border-right:1px solid color-mix(in oklab, white 15%, transparent);border-bottom:1px solid color-mix(in oklab, white 15%, transparent)}
-.cov h5{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:color-mix(in oklab, var(--bg) 60%, transparent);margin:0 0 10px}
-.cov p{font-family:var(--sans);font-size:18px;font-weight:500;margin:0;color:var(--bg);line-height:1.3}
-.cov small{display:block;font-family:var(--mono);font-size:11px;color:color-mix(in oklab, var(--bg) 60%, transparent);margin-top:6px;letter-spacing:.05em}
-@media (max-width:760px){.cov-grid{grid-template-columns:1fr 1fr}}
-@media (max-width:480px){.cov-grid{grid-template-columns:1fr}}
+/* ---------- Quality / Certifications ---------- */
+.quality{background:var(--bg)}
+.q-wrap{display:grid;grid-template-columns: 1.05fr 1fr;gap:64px;margin-top:48px;align-items:start}
+@media (max-width:900px){.q-wrap{grid-template-columns:1fr;gap:36px}}
+.spec-sheet{border:1px solid var(--rule);padding:0;background:var(--paper);font-family:var(--mono);position:relative}
+.spec-sheet h5{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin:0;padding:16px 22px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between}
+.spec-sheet h5 .rev{color:var(--accent-2)}
+.spec-row{display:grid;grid-template-columns: 1fr auto;gap:14px;padding:14px 22px;border-bottom:1px dashed var(--rule-2);font-size:13px;align-items:baseline}
+.spec-row:last-child{border-bottom:0}
+.spec-row .k{color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em;font-size:11px}
+.spec-row .v{color:var(--ink);font-weight:500}
+.spec-row .v.ok{color:var(--good)}
+.q-copy h3{font-family:var(--sans);font-weight:500;font-size:clamp(28px,3vw,40px);line-height:1.1;letter-spacing:-0.022em;margin:0 0 18px}
+.q-copy h3 em{font-family:var(--serif);font-style:italic;color:var(--accent-2);font-weight:500}
+.q-copy p{color:var(--ink-2);font-size:16px;line-height:1.6;max-width:48ch}
+.q-pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}
+.q-pillars div{border-top:1px solid var(--rule);padding-top:14px}
+.q-pillars b{font-family:var(--sans);font-weight:600;font-size:15px;display:block;margin-bottom:2px}
+.q-pillars span{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.04em}
 
-/* ---------- Sobre Víctor ---------- */
+/* ---------- Method ---------- */
+.method{background:var(--bg-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.method-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:48px;counter-reset:step}
+.step{padding:28px 22px 32px;border-right:1px solid var(--rule);position:relative;background:transparent}
+.step:last-child{border-right:0}
+.step .num{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase}
+.step h4{font-family:var(--sans);font-weight:500;font-size:22px;letter-spacing:-0.015em;line-height:1.1;margin:14px 0 8px}
+.step p{margin:0;color:var(--ink-2);font-size:13.5px;line-height:1.55}
+.step::after{content:"";position:absolute;top:38px;right:-7px;width:14px;height:14px;background:var(--bg-2);border-right:1px solid var(--rule);border-top:1px solid var(--rule);transform:rotate(45deg)}
+.step:last-child::after{display:none}
+@media (max-width:900px){.method-grid{grid-template-columns:1fr 1fr}.step{border-bottom:1px solid var(--rule)}.step::after{display:none}}
+@media (max-width:560px){.method-grid{grid-template-columns:1fr}}
+
+/* ---------- About ---------- */
 .about{background:var(--bg)}
-.about-grid{display:grid;grid-template-columns: 1.1fr 1fr;gap:64px;margin-top:48px;align-items:start;container-type:inline-size}
-.about-grid p{font-size:16.5px;line-height:1.65;color:var(--ink-2);max-width:60ch}
-.about-grid p.lead{font-family:var(--serif);font-size:24px;line-height:1.35;color:var(--ink);font-weight:400;max-width:30ch}
+.about-grid{display:grid;grid-template-columns: 1.1fr 1fr;gap:64px;margin-top:48px;align-items:start}
+.about-grid p{font-size:16.5px;line-height:1.65;color:var(--ink-2);max-width:58ch}
+.about-grid p.lead{font-family:var(--serif);font-size:24px;line-height:1.35;color:var(--ink);font-weight:400}
 .values{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
 .values div{border-top:1px solid var(--rule);padding-top:14px}
 .values h5{font-family:var(--sans);font-weight:600;font-size:15px;margin:0 0 4px}
 .values span{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.06em}
-.leader{
-  position:relative;background:var(--paper);border:1px solid var(--rule);padding:0;
-  container-type:inline-size
-}
-.leader .photo{
-  aspect-ratio:4/5;background:linear-gradient(135deg, var(--ink) 0%, oklch(0.28 0.020 245) 100%);
-  overflow:hidden;position:relative;
-}
-.leader .photo img{
-  position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;object-position:center 32%;
-  filter:grayscale(.12) contrast(1.02);
-  transition:transform .6s var(--ease-out), filter .4s
-}
-.leader:hover .photo img{transform:scale(1.02);filter:grayscale(0) contrast(1.04)}
-.leader .photo::after{
-  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:
-    linear-gradient(180deg, oklch(0.17 0.01 255 / .35) 0%, transparent 28%, transparent 70%, oklch(0.17 0.01 255 / .55) 100%)
-}
-.leader .photo .photo-tag{position:absolute;left:18px;top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:color-mix(in oklab, white 85%, transparent);z-index:2;text-shadow:0 1px 3px oklch(0 0 0 / .5)}
-.leader .photo .photo-meta{position:absolute;right:18px;bottom:18px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:color-mix(in oklab, white 75%, transparent);text-align:right;z-index:2;line-height:1.5;text-shadow:0 1px 3px oklch(0 0 0 / .5)}
+.leader{position:relative;background:var(--paper);border:1px solid var(--rule);padding:0}
+.leader .photo{aspect-ratio:4/5;background:var(--bg-3);overflow:hidden;position:relative}
+.leader .photo .clip{position:absolute;inset:0;overflow:hidden}
+.leader .photo .clip img{width:100%;height:100%;object-fit:cover;filter:grayscale(.25)}
+.leader .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 60%, oklch(0.17 0.01 255 / .7) 100%)}
 .leader-info{padding:22px 24px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:end;gap:14px}
 .leader-info h4{font-family:var(--sans);font-weight:600;font-size:20px;letter-spacing:-0.015em;margin:0 0 2px}
 .leader-info span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
 .leader-info .sig{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--accent-2);letter-spacing:-0.01em}
-@container (max-width: 760px){
-  .about-grid{grid-template-columns:1fr;gap:48px}
-}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:48px}}
 
-/* ---------- Contact ---------- */
+/* ---------- Contact / RFQ ---------- */
 .contact{background:var(--ink);color:var(--bg);position:relative;overflow:hidden}
 .contact::before{content:"";position:absolute;inset:0;background-image:
   linear-gradient(to right, color-mix(in oklab, white 5%, transparent) 1px, transparent 1px),
   linear-gradient(to bottom, color-mix(in oklab, white 5%, transparent) 1px, transparent 1px);
   background-size: 64px 64px; pointer-events:none
 }
-.contact::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg, transparent, var(--accent), transparent);opacity:.5}
-.contact .section-head{border-bottom-color:color-mix(in oklab, white 15%, transparent);position:relative;z-index:2}
+.contact .section-head{border-bottom-color:color-mix(in oklab, white 15%, transparent)}
 .contact .section-head h2{color:var(--bg)}
-.contact .section-head h2 em{color:color-mix(in oklab, var(--accent) 90%, white)}
+.contact .section-head h2 em{color:color-mix(in oklab, var(--bg) 70%, transparent)}
 .contact .section-head p{color:color-mix(in oklab, var(--bg) 75%, transparent)}
 .contact .section-num{color:color-mix(in oklab, var(--bg) 60%, transparent)}
-.cta-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:18px;margin-top:48px;position:relative;z-index:2;container-type:inline-size}
-.cta-card{
-  display:flex;flex-direction:column;justify-content:space-between;gap:32px;
-  background:color-mix(in oklab, white 4%, transparent);border:1px solid color-mix(in oklab, white 18%, transparent);
-  padding:28px 26px;min-height:220px;
-  transition:background .25s, transform .25s, border-color .25s
-}
-.cta-card:hover{background:color-mix(in oklab, var(--accent) 8%, transparent);border-color:var(--accent);transform:translateY(-2px)}
-.cta-card .l{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:color-mix(in oklab, var(--bg) 60%, transparent)}
-.cta-card .v{font-family:var(--sans);font-size:22px;font-weight:500;color:var(--bg);line-height:1.25;letter-spacing:-0.01em}
-.cta-card .v a:hover{color:var(--accent)}
-.cta-card .v small{display:block;font-family:var(--mono);font-size:11.5px;font-weight:400;color:color-mix(in oklab, var(--bg) 65%, transparent);margin-top:6px;letter-spacing:.04em}
-.cta-card .arrow-row{display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid color-mix(in oklab, white 12%, transparent)}
-.cta-card .arrow-row span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:color-mix(in oklab, var(--bg) 60%, transparent)}
-.cta-card .arrow-row svg{width:18px;height:18px;color:var(--accent);transition:transform .25s}
-.cta-card:hover .arrow-row svg{transform:translate(4px,-4px)}
-@container (max-width: 760px){
-  .cta-grid{grid-template-columns:1fr}
-}
-
-/* ---------- Form ---------- */
-.form-wrap{margin-top:64px;display:grid;grid-template-columns:1.2fr 1fr;gap:64px;position:relative;z-index:2;container-type:inline-size}
-.form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.rfq{display:grid;grid-template-columns: 1.2fr 1fr;gap:64px;margin-top:48px;position:relative;z-index:2}
+@media (max-width:900px){.rfq{grid-template-columns:1fr;gap:36px}}
+.rfq-form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .field{display:flex;flex-direction:column;gap:8px}
 .field.full{grid-column:span 2}
 .field label{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:color-mix(in oklab, var(--bg) 65%, transparent)}
 .field input, .field textarea, .field select{
   background:transparent;border:0;border-bottom:1px solid color-mix(in oklab, white 25%, transparent);
-  color:var(--bg);font-family:var(--sans);font-size:16px;padding:8px 0 10px;outline:none;transition:border-color .2s;
-  border-radius:0
+  color:var(--bg);font-family:var(--sans);font-size:16px;padding:8px 0 10px;outline:none;transition:border-color .2s
 }
 .field input:focus, .field textarea:focus, .field select:focus{border-color:var(--accent)}
-.field input:user-invalid, .field textarea:user-invalid{border-color:var(--warn)}
-.field textarea{resize:vertical;min-height:84px;font-family:inherit}
-.field select{
-  appearance:none;
-  background-image:
-    linear-gradient(45deg,transparent 50%, var(--bg) 50%),
-    linear-gradient(135deg, var(--bg) 50%, transparent 50%);
-  background-position: calc(100% - 14px) 50%, calc(100% - 9px) 50%;
-  background-size:5px 5px, 5px 5px;background-repeat:no-repeat
+.field textarea{resize:vertical;min-height:80px}
+.field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%, var(--bg) 50%), linear-gradient(135deg, var(--bg) 50%, transparent 50%);background-position: calc(100% - 14px) 50%, calc(100% - 9px) 50%;background-size:5px 5px, 5px 5px;background-repeat:no-repeat}
+.field option{background:var(--ink)}
+.attach{
+  grid-column:span 2;display:flex;justify-content:space-between;align-items:center;gap:18px;
+  border:1px dashed color-mix(in oklab, white 25%, transparent);padding:18px 22px;margin-top:8px
 }
-.field option{background:var(--ink);color:var(--bg)}
+.attach .l{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:color-mix(in oklab, var(--bg) 80%, transparent)}
+.attach .l b{display:block;color:var(--bg);font-family:var(--sans);font-size:14px;letter-spacing:0;margin-bottom:2px;font-weight:600}
+.attach input{display:none}
+.attach label.pick{background:var(--bg);color:var(--ink);padding:10px 16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border:1px solid var(--bg);transition:.2s}
+.attach label.pick:hover{background:var(--accent);border-color:var(--accent)}
 .submit-row{grid-column:span 2;display:flex;gap:14px;align-items:center;margin-top:14px;flex-wrap:wrap}
 .submit-row .cta{background:var(--accent);border-color:var(--accent);color:var(--ink)}
 .submit-row .cta:hover{background:var(--bg);border-color:var(--bg)}
-.submit-row .cta::after{background:var(--bg)}
 .submit-row .note{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:color-mix(in oklab, var(--bg) 55%, transparent);max-width:300px;line-height:1.5}
-@container (max-width: 760px){
-  .form-wrap{grid-template-columns:1fr;gap:36px}
-  .form{grid-template-columns:1fr}
-  .field.full, .submit-row{grid-column:span 1}
-}
+@media (max-width:560px){.rfq-form{grid-template-columns:1fr}.field.full,.attach,.submit-row{grid-column:span 1}}
 
-/* Popover de confirmación (al enviar) */
-dialog#okDialog{
-  border:1px solid var(--accent);background:var(--ink);color:var(--bg);padding:0;
-  max-width:420px;width:calc(100% - 40px);
-  box-shadow:0 30px 80px -20px oklch(0 0 0 / .6)
+.contact-info{display:flex;flex-direction:column;gap:22px}
+.contact-info .block{border-top:1px solid color-mix(in oklab, white 18%, transparent);padding-top:18px}
+.contact-info .block .l{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:color-mix(in oklab, var(--bg) 55%, transparent);margin-bottom:8px}
+.contact-info .block .v{font-family:var(--sans);font-size:18px;font-weight:500;color:var(--bg);line-height:1.35}
+.contact-info .block .v a:hover{color:var(--accent)}
+.contact-info .block .v small{display:block;font-family:var(--mono);font-size:12px;font-weight:400;color:color-mix(in oklab, var(--bg) 75%, transparent);margin-top:4px;letter-spacing:.04em}
+
+.mini-map{margin-top:22px;border:1px solid color-mix(in oklab, white 18%, transparent);aspect-ratio:1.6/1;position:relative;background:
+  radial-gradient(circle at 60% 40%, color-mix(in oklab, var(--accent) 60%, transparent), transparent 40%),
+  linear-gradient(135deg, color-mix(in oklab, white 5%, transparent), transparent 60%);
+  overflow:hidden
 }
-dialog#okDialog::backdrop{background:oklch(0.10 0.01 255 / .65);backdrop-filter:blur(6px)}
-dialog .ok-body{padding:32px 30px}
-dialog h3{font-family:var(--sans);font-size:22px;font-weight:600;letter-spacing:-0.01em;margin:0 0 8px}
-dialog p{color:color-mix(in oklab, var(--bg) 80%, transparent);font-size:14.5px;line-height:1.55;margin:0 0 22px}
-dialog button{background:var(--accent);color:var(--ink);padding:10px 18px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--accent);border-radius:2px;cursor:pointer}
-dialog button:hover{background:var(--bg);border-color:var(--bg)}
+.mini-map::before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(to right, color-mix(in oklab, white 8%, transparent) 1px, transparent 1px),
+  linear-gradient(to bottom, color-mix(in oklab, white 8%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px}
+.mini-map .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:14px;height:14px;background:var(--accent);border-radius:50%;box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent) 30%, transparent), 0 0 0 14px color-mix(in oklab, var(--accent) 8%, transparent); animation:pulse 2.4s ease-out infinite}
+.mini-map .label{position:absolute;left:50%;top:50%;transform:translate(20px,-26px);font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--bg);background:var(--ink);padding:4px 7px;border:1px solid color-mix(in oklab, white 20%, transparent)}
 
 /* ---------- Footer ---------- */
 footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%, transparent);padding:64px 0 28px}
@@ -482,219 +381,88 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
 .footer-bottom .pulse{color:var(--good)}
 @media (max-width:780px){.footer-grid{grid-template-columns:1fr 1fr}}
 
-/* ---------- WhatsApp floating CTA ---------- */
-.wa-float{
-  position:fixed;right:24px;bottom:24px;z-index:60;
-  background:var(--good);color:#fff;width:60px;height:60px;
-  display:grid;place-items:center;border-radius:50%;
-  box-shadow:0 12px 32px -8px oklch(0.66 0.150 145 / .55);
-  transition:transform .25s var(--ease-out), box-shadow .25s;
-  border:2px solid var(--bg)
-}
-.wa-float:hover{transform:translateY(-2px) scale(1.05);box-shadow:0 16px 40px -8px oklch(0.66 0.150 145 / .7)}
-.wa-float svg{width:30px;height:30px}
-.wa-float::after{
-  content:"Escríbeme por WhatsApp";position:absolute;right:calc(100% + 14px);top:50%;transform:translateY(-50%) translateX(8px);
-  background:var(--ink);color:var(--bg);padding:9px 14px;border-radius:2px;
-  font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;
-  opacity:0;pointer-events:none;transition:.25s
-}
-.wa-float:hover::after{opacity:1;transform:translateY(-50%) translateX(0)}
-@media (max-width:480px){
-  .wa-float{right:16px;bottom:16px;width:54px;height:54px}
-  .wa-float::after{display:none}
-}
-
-/* ---------- Scroll-driven parallax hero (animación nativa 2026) ---------- */
-@supports (animation-timeline: view()){
-  .hero-inner{animation:parallax linear;animation-timeline:view();animation-range: cover 0% cover 100%}
-  @keyframes parallax{
-    from{transform:translateY(0)}
-    to{transform:translateY(-40px)}
-  }
-}
+/* Mobile nav toggle (hidden, fallback) */
+.nav-toggle{display:none}
+@media (max-width:960px){.nav-toggle{display:inline-flex}}
 
 /* ---------- Reveal on scroll ---------- */
-@property --reveal-progress{syntax: '<number>'; initial-value: 0; inherits: false}
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease-out), transform .8s var(--ease-out)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
 
-/* ---------- View transitions ---------- */
-@view-transition{navigation: auto}
-::view-transition-old(root){animation:fadeOut .25s var(--ease-out) both}
-::view-transition-new(root){animation:fadeIn .35s var(--ease-out) both}
-@keyframes fadeOut{to{opacity:0}}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}}
-
-/* ---------- Reduced motion ---------- */
-@media (prefers-reduced-motion: reduce){
-  *,::before,::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-  .reveal{opacity:1;transform:none}
-}
-
-/* ---------- Print ---------- */
-@media print{
-  .nav,.topbar,.wa-float,.strip{display:none}
-  body{background:#fff;color:#000}
-}
-
-/* ============================================================
-   SISTEMA IMPECCABLE · Edición inline + feedback
-   Activar con: ?edit=1  o click en el botón flotante ✏️
-   ============================================================ */
-body.impeccable-on{outline:3px solid var(--accent);outline-offset:-3px}
-body.impeccable-on [data-imp-editable]{transition:outline-color .15s, background .15s;cursor:text}
-body.impeccable-on [data-imp-editable]:hover{outline:2px dashed var(--accent);outline-offset:3px;background:color-mix(in oklab, var(--accent) 6%, transparent)}
-body.impeccable-on [data-imp-editable][contenteditable="true"]{outline:2px solid var(--accent)!important;outline-offset:4px;background:color-mix(in oklab, var(--accent) 14%, transparent)}
-[data-imp-edited]::after{content:"";display:inline-block;width:5px;height:5px;background:var(--accent);border-radius:50%;margin-left:4px;vertical-align:middle}
-
-#impFab{
-  position:fixed;right:24px;bottom:96px;z-index:70;
-  width:50px;height:50px;border-radius:50%;
-  background:var(--ink);color:var(--accent);
-  border:2px solid var(--accent);cursor:pointer;
-  font-size:20px;
-  box-shadow:0 10px 28px -6px oklch(0 0 0 / .45);
-  transition:transform .2s var(--ease-out), background .2s, color .2s
-}
-#impFab:hover{transform:translateY(-2px) scale(1.05);background:var(--accent);color:var(--ink)}
-#impFab.on{background:var(--accent);color:var(--ink)}
-#impFab::after{content:"Click para editar";position:absolute;right:calc(100% + 12px);top:50%;transform:translateY(-50%) translateX(6px);
-  background:var(--ink);color:var(--bg);padding:7px 12px;border-radius:2px;
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;
-  opacity:0;pointer-events:none;transition:.25s;border:1px solid var(--rule-2)}
-#impFab:hover::after{opacity:1;transform:translateY(-50%) translateX(0)}
-#impFab.on::after{content:"Click para salir"}
-
-#impPanel{
-  position:fixed;left:24px;bottom:24px;z-index:70;
-  background:var(--ink);color:var(--bg);
-  padding:18px 20px;border-radius:4px;
-  font-family:var(--mono);font-size:12px;letter-spacing:.02em;
-  box-shadow:0 16px 40px -10px oklch(0 0 0 / .6);
-  max-width:360px;line-height:1.5;
-  border:1px solid var(--accent);
-  display:none
-}
-#impPanel.show{display:block;animation:impIn .25s var(--ease-out)}
-@keyframes impIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-#impPanel header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid color-mix(in oklab, white 12%, transparent)}
-#impPanel header strong{color:var(--accent);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
-#impPanel header .close{background:transparent;border:0;color:color-mix(in oklab, var(--bg) 60%, transparent);cursor:pointer;font-size:16px;padding:0 4px;line-height:1}
-#impPanel header .close:hover{color:var(--bg)}
-#impCount{opacity:.78;margin-bottom:14px;font-size:11.5px}
-#impCount b{color:var(--accent);font-weight:600}
-#impActions{display:flex;gap:8px;flex-wrap:wrap}
-#impActions button{
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
-  padding:8px 12px;cursor:pointer;border-radius:2px;border:1px solid transparent;
-  transition:.2s
-}
-#impActions .impExport{background:var(--accent);color:var(--ink);border-color:var(--accent)}
-#impActions .impExport:hover{background:var(--bg);border-color:var(--bg)}
-#impActions .impApply{background:transparent;color:var(--good);border-color:var(--good)}
-#impActions .impApply:hover{background:var(--good);color:var(--ink)}
-#impActions .impReset{background:transparent;color:color-mix(in oklab, var(--bg) 70%, transparent);border-color:color-mix(in oklab, var(--bg) 25%, transparent)}
-#impActions .impReset:hover{color:var(--bg);border-color:var(--bg)}
-#impPanel .hint{margin-top:14px;padding-top:12px;border-top:1px solid color-mix(in oklab, white 10%, transparent);opacity:.6;font-size:11px;line-height:1.55}
-#impPanel .hint b{color:var(--accent);font-weight:500}
-
-#impToast{
-  position:fixed;left:50%;bottom:32px;z-index:80;
-  transform:translateX(-50%);
-  background:var(--good);color:var(--ink);
-  padding:12px 20px;border-radius:2px;
-  font-family:var(--mono);font-size:12px;letter-spacing:.06em;
-  box-shadow:0 12px 32px -8px oklch(0 0 0 / .5);
-  opacity:0;pointer-events:none;transition:.3s
-}
-#impToast.show{opacity:1;transform:translateX(-50%) translateY(-4px)}
-
-@media (max-width:480px){
-  #impFab{right:14px;bottom:80px;width:44px;height:44px}
-  #impPanel{left:14px;right:14px;bottom:14px;max-width:none}
-}
 </style>
 </head>
 <body>
 
 <!-- ============== TOP BAR ============== -->
-<div class="topbar" role="banner">
+<div class="topbar">
   <div class="group">
-    <span><span class="dot" aria-hidden="true"></span>VVC · DISPONIBLE · CDMX / EDOMEX</span>
+    <span><span class="dot"></span>OPERATIVO · 35+ AÑOS EN MÉXICO</span>
   </div>
   <div class="group">
-    <span>CONSULTORÍA · SUPERVISIÓN</span>
+    <span>NAUCALPAN · CDMX</span>
     <span>UTC−6 · <span id="clock">--:--:--</span></span>
+    <span>RFQ: 24H</span>
   </div>
   <div class="group">
-    <a href="tel:+525536174459">📞 (55) 36 17 44 59</a>
-    <a href="mailto:iepisadecv@gmail.com">✉ iepisadecv@gmail.com</a>
+    <span>(55) 26 37 60 40</span>
   </div>
 </div>
 
 <!-- ============== NAV ============== -->
-<nav class="nav" aria-label="Navegación principal">
+<nav class="nav">
   <div class="nav-inner">
-    <a href="#inicio" class="brand" aria-label="VVC Consultoría · inicio">
-      <span class="mark" aria-hidden="true">VVC</span>
+    <a href="#inicio" class="brand">
+      <span class="mark">IE</span>
       <span>
-        <span class="name">Víctor Vargas Carrillo</span>
-        <span class="sub">Consultoría Industrial · Supervisión</span>
+        <span class="name">IEPI</span>
+        <span class="sub">Instrumentación & Electrosistemas</span>
       </span>
     </a>
-    <div class="nav-links" id="navLinks">
-      <a href="#manifiesto">Manifiesto</a>
+    <div class="nav-links">
       <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
       <a href="#sectores">Sectores</a>
-      <a href="#modalidad">Modalidad</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="/equipo/">Equipo en venta</a>
+      <a href="#calidad">Calidad</a>
+      <a href="#nosotros">Nosotros</a>
       <a href="#contacto">Contacto</a>
     </div>
     <a href="#contacto" class="cta">
-      Agendar llamada
-      <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
+      Solicitar Cotización
+      <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-    </button>
   </div>
 </nav>
 
 <!-- ============== HERO ============== -->
 <header class="hero" id="inicio">
-  <div class="grid-overlay" aria-hidden="true"></div>
+  <div class="bg"><img src="assets/photos/p07.png" alt="Instalaciones de tuberías y válvulas industriales" /></div>
+  <div class="grid-overlay"></div>
   <div class="hero-inner container">
     <div class="hero-top">
-      <span class="tag">Capítulo 2026 · 50+ años en planta · 9 sectores</span>
+      <div class="tag">Capítulo 2026 · Activo en 8 sectores</div>
       <div class="coords">
-        19.4326° N&nbsp;&nbsp;99.1332° W<br/>
-        VVC · Consultoría Industrial<br/>
-        EST. 1976 (operación personal)
+        19.499282° N&nbsp;&nbsp;99.231691° W<br/>
+        IEPI / S.A. DE C.V.<br/>
+        EST. 1990
       </div>
     </div>
 
     <div>
-      <h1>50 años viendo<br/>lo que otros <em>no ven</em>.<span class="slash"> /</span></h1>
-
-      <p class="hero-kicker"><span>En instrumentación, electrosistemas y control de procesos.</span></p>
+      <h1>Ingeniería<br/>de <em>precisión</em><br/>para la <span class="slash">/</span> industria.</h1>
 
       <div class="hero-body">
-        <p>Servicios de supervisión y asesoría experta en proyectos eléctricos de <strong>baja y media tensión</strong>, <strong>instrumentación</strong>, <strong>control</strong>, <strong>fibra óptica</strong> y sistemas de <strong>fuego y gas</strong>. CDMX y Estado de México. Garantizo calidad desde la instalación hasta el dossier.</p>
+        <p>Instrumentación, electrosistemas y seguridad de proceso para refinerías, plantas de generación, farmacéuticas, automotrices y campos solares. Diseño, suministro, instalación y puesta en marcha — bajo dossier de calidad.</p>
         <div class="hero-actions">
-          <a href="#contacto" class="cta">Agendar llamada de 20 min
-            <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
-          </a>
-          <a href="https://wa.me/525536174459?text=Hola%20V%C3%ADctor%2C%20me%20interesa%20agendar%20una%20llamada%20sobre%20supervisi%C3%B3n%20industrial." class="cta ghost" target="_blank" rel="noopener">WhatsApp directo</a>
+          <a href="#servicios" class="cta">Ver capacidades <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg></a>
+          <a href="#contacto" class="cta ghost">Solicitar RFQ</a>
         </div>
       </div>
 
       <div class="hero-bottom">
-        <div class="hero-stat"><div class="n"><span data-count="50">0</span><sup>+</sup></div><div class="l">Años en planta</div></div>
-        <div class="hero-stat"><div class="n"><span data-count="9">0</span></div><div class="l">Sectores atendidos</div></div>
-        <div class="hero-stat"><div class="n"><span data-count="200">0</span><sup>+</sup></div><div class="l">Proyectos ejecutados</div></div>
-        <div class="hero-stat"><div class="n"><span data-count="3">0</span></div><div class="l">Modalidades de cobro</div></div>
+        <div class="hero-stat"><div class="n">35<sup>+</sup></div><div class="l">Años en operación</div></div>
+        <div class="hero-stat"><div class="n">200<sup>+</sup></div><div class="l">Proyectos ejecutados</div></div>
+        <div class="hero-stat"><div class="n">8</div><div class="l">Sectores industriales</div></div>
+        <div class="hero-stat"><div class="n">0</div><div class="l">Incidentes 2024</div></div>
       </div>
     </div>
   </div>
@@ -703,21 +471,29 @@ body.impeccable-on [data-imp-editable][contenteditable="true"]{outline:2px solid
 <!-- ============== STRIP ============== -->
 <div class="strip" aria-hidden="true">
   <div class="strip-track">
-    <span>Refinerías</span><span>Petroquímica</span><span>Ciclos combinados</span><span>Parques solares</span><span>Plataformas</span><span>Cementeras</span><span>Papeleras</span><span>Laboratorios</span><span>Automotriz</span><span>Supervisión de ingeniería</span><span>Pruebas y commissioning</span>
-    <span>Refinerías</span><span>Petroquímica</span><span>Ciclos combinados</span><span>Parques solares</span><span>Plataformas</span><span>Cementeras</span><span>Papeleras</span><span>Laboratorios</span><span>Automotriz</span><span>Supervisión de ingeniería</span><span>Pruebas y commissioning</span>
+    <span>Petroquímica</span><span>Energía</span><span>Farmacéutica</span><span>Automotriz</span><span>Cementera</span><span>Alimentaria</span><span>Papelera</span><span>Química</span><span>Off-shore</span><span>Solar</span><span>Petroquímica</span><span>Energía</span><span>Farmacéutica</span><span>Automotriz</span><span>Cementera</span><span>Alimentaria</span><span>Papelera</span><span>Química</span><span>Off-shore</span><span>Solar</span>
   </div>
 </div>
 
-<!-- ============== MANIFIESTO ============== -->
-<section class="manifesto" id="manifiesto">
+<!-- ============== INTRO ============== -->
+<section class="intro">
   <div class="container">
-    <div class="manifesto-grid">
+    <div class="intro-grid">
       <div class="eyebrow">§ 00 — Manifiesto</div>
       <div>
-        <h3>50 años de experiencia, <em>una sola certeza</em>.</h3>
-        <p class="lead">Los problemas que detienen una planta casi siempre se ven venir — si alguien los está mirando.</p>
-        <p>¿Tu último lazo de control, quién lo firma? ¿Tu residente? ¿El contratista? Ese momento donde el electricista dice que "ya terminó", el instrumentista dice que "ya calibró" y la señal en el DCS no aparece — ese es el momento donde intervengo.</p>
-        <p><strong>Superviso.</strong> Soy el par técnico&nbsp; que tu equipo necesita cuando el plan no coincide con la planta. Y cuando coincide, lo confirmo con firma.</p>
+        <h3>Lo que hace funcionar a una planta no se ve. Pero <em>si falla, se detiene</em>. Existimos para que eso no ocurra.</h3>
+        <div class="intro-grid" style="grid-template-columns:1fr 1fr;gap:32px;margin-top:48px">
+          <div class="meta">
+            <div><span>Fundación</span><span>1990 — Ing. Víctor Vargas Carrillo</span></div>
+            <div><span>Sede</span><span>Naucalpan, Estado de México</span></div>
+            <div><span>Cobertura</span><span>Nacional · plataformas off-shore</span></div>
+          </div>
+          <div class="meta">
+            <div><span>Enfoque</span><span>Eléctrico · Instrumentación · F&G</span></div>
+            <div><span>Calidad</span><span>Dossier por proyecto · As-Built</span></div>
+            <div><span>Disponibilidad</span><span>RFQ respondido en 24h hábiles</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -727,254 +503,366 @@ body.impeccable-on [data-imp-editable][contenteditable="true"]{outline:2px solid
 <section class="section" id="servicios">
   <div class="container">
     <div class="section-head">
-      <div class="section-num"><b>§ 01</b><span>— Servicios de supervisión</span></div>
+      <div class="section-num"><b>§ 01</b><span>— Capacidades</span></div>
       <div>
-        <h2>Cuatro formas <em>de entrar</em> a tu proyecto.</h2>
-        <p style="margin-top:18px">No vendo paquetes. Vendo tiempo y criterio. Tú decides en qué fase me necesitas, y yo entro donde más duele. Si no estoy seguro de que sirva, te lo digo antes de empezar.</p>
+        <h2>Tres disciplinas. <em>Un solo</em> dossier.</h2>
+        <p style="margin-top:18px">Trabajamos como un solo equipo entre electricidad, instrumentación y seguridad — porque sus interfaces son donde aparecen los problemas. Cada servicio se entrega con plano As-Built, hojas de prueba firmadas y dossier de calidad por lazo.</p>
       </div>
     </div>
 
     <div class="services">
-
       <article class="svc reveal">
         <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-        <header class="svc-head"><span class="num">SVC-01</span><span class="tag">Ingeniería</span></header>
-        <div class="svc-body">
-          <h3>Supervisión de <em>ingeniería de detalle</em></h3>
-          <p class="desc">No vendo paquetes. Vendo tiempo y criterio. Tú decides en qué fase me necesitas, y yo entro donde más se requiere. Si no estoy seguro de que algo te sirva, te lo digo antes de empezar.</p>
+        <div class="svc-img"><div class="clip"><img src="assets/photos/p35.png" alt="Cableado en celda de control" /></div>
+          <span class="num">SVC-01</span><span class="tag">Eléctrico</span>
         </div>
-        <ul class="svc-list">
-          <li>Revisión de planos</li>
-          <li>Verificación de P&amp;ID</li>
-          <li>Subestaciones BT / MT</li>
-          <li>Lista de materiales</li>
-          <li>Normativa aplicable</li>
-          <li>Dossier de calidad</li>
-        </ul>
-        <footer class="svc-foot"><span>ENTREGABLE · NOTA TÉCNICA FIRMADA</span><a href="#contacto">Cotizar →</a></footer>
+        <div class="svc-body">
+          <h3>Instalaciones <em>Eléctricas</em></h3>
+          <p>Baja y media tensión, desde la subestación hasta el tablero de control. Diseñamos para continuidad operativa y mantenibilidad.</p>
+          <ul class="svc-list">
+            <li>Tableros BT / MT</li>
+            <li>Charolas y conduit</li>
+            <li>Cableado estructurado</li>
+            <li>Red de tierras</li>
+            <li>Soportería</li>
+            <li>Acometidas y SE</li>
+          </ul>
+        </div>
+        <div class="svc-foot"><span>NORMA · NOM-001-SEDE / IEC 60364</span><a href="#contacto">Ficha técnica →</a></div>
       </article>
 
       <article class="svc reveal">
         <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-        <header class="svc-head"><span class="num">SVC-02</span><span class="tag">Instalación</span></header>
-        <div class="svc-body">
-          <h3>Supervisión de <em>instalaciones</em></h3>
-          <p class="desc">Acompaño al equipo de montaje. Verifico charolas, conduit, cableado, conexionado, soportería y tendido de cableados. Si algo se está haciendo mal, lo freno antes de que cause un retraso.</p>
+        <div class="svc-img"><div class="clip"><img src="assets/photos/p13.png" alt="Personal calibrando instrumentos" /></div>
+          <span class="num">SVC-02</span><span class="tag">Instrumentación</span>
         </div>
-        <ul class="svc-list">
-          <li>Eléctrica BT / MT</li>
-          <li>Charolas y conduit</li>
-          <li>Conexionado y peinado</li>
-          <li>Soportería y tendido</li>
-          <li>Cableado estructurado</li>
-          <li>Fibra óptica · F&amp;G</li>
-        </ul>
-        <footer class="svc-foot"><span>ENTREGABLE · REGISTRO FOTOGRÁFICO + REPORTE</span><a href="#contacto">Cotizar →</a></footer>
+        <div class="svc-body">
+          <h3><em>Instrumentación</em> de proceso</h3>
+          <p>Medición, control y registro con trazabilidad. Calibración con equipo certificado y pruebas de lazo documentadas pieza por pieza.</p>
+          <ul class="svc-list">
+            <li>Tableros DCS / PLC</li>
+            <li>Cajas de conexiones</li>
+            <li>Calibración certificada</li>
+            <li>Pruebas de lazo</li>
+            <li>Tendido fibra óptica</li>
+            <li>Loop check &amp; commissioning</li>
+          </ul>
+        </div>
+        <div class="svc-foot"><span>NORMA · ISA-5.1 / IEC 61511</span><a href="#contacto">Ficha técnica →</a></div>
       </article>
 
       <article class="svc reveal">
         <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-        <header class="svc-head"><span class="num">SVC-03</span><span class="tag">Pruebas</span></header>
         <div class="svc-body">
-          <h3>Supervisión de <em>pruebas y commissioning</em></h3>
-          <p class="desc">Pruebas de lazo, calibración, energizado, loop check, SAT. Verifico que cada paso se firme, se documente y se cierre. El dossier de calidad pasa de ser una carpeta a ser un respaldo real.</p>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px"><span class="mono" style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)">SVC-03 · Seguridad</span></div>
+          <h3>Sistemas de <em>Fuego &amp; Gas</em></h3>
+          <p style="max-width:60ch">Protegemos personal y activos críticos: detección temprana, paros de emergencia y supresión integrada con la lógica de proceso. Ingeniería SIL evaluada por escenario.</p>
+          <ul class="svc-list" style="grid-template-columns:repeat(3,1fr)">
+            <li>Detección F&amp;G</li>
+            <li>Paros de emergencia (ESD)</li>
+            <li>Detección de humo</li>
+            <li>Supresión de fuego</li>
+            <li>Tableros de aviso</li>
+            <li>Cumplimiento SIL</li>
+          </ul>
         </div>
-        <ul class="svc-list">
-          <li>Loop check &amp; FAT/SAT</li>
-          <li>Calibración de instrumentos</li>
-          <li>Pruebas de lazo</li>
-          <li>Energizado paso a paso</li>
-          <li>As-Built verificado</li>
-          <li>Dossier firmado</li>
-        </ul>
-        <footer class="svc-foot"><span>ENTREGABLE · HOJAS DE PRUEBA FIRMADAS</span><a href="#contacto">Cotizar →</a></footer>
+        <div class="svc-img"><div class="clip"><img src="assets/photos/p22.png" alt="Tablero de aviso de fuego y gas" /></div>
+          <span class="num">SVC-03</span><span class="tag">Seguridad</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== METHOD ============== -->
+<section class="method section" style="padding:88px 0">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num"><b>§ 02</b><span>— Método</span></div>
+      <div>
+        <h2>De la <em>RFQ</em> a la puesta en marcha.</h2>
+        <p style="margin-top:18px">Un flujo de cinco etapas con entregables claros en cada paso. Sin sorpresas y sin tiempos muertos.</p>
+      </div>
+    </div>
+
+    <div class="method-grid reveal">
+      <div class="step">
+        <span class="num">M.01</span>
+        <h4>Levantamiento</h4>
+        <p>Visita en sitio, lectura de planos, identificación de interfaces y normativas aplicables.</p>
+      </div>
+      <div class="step">
+        <span class="num">M.02</span>
+        <h4>Ingeniería &amp; cotización</h4>
+        <p>Listas de materiales, lazos y memorias técnicas. Propuesta cerrada en 5–10 días hábiles.</p>
+      </div>
+      <div class="step">
+        <span class="num">M.03</span>
+        <h4>Suministro</h4>
+        <p>Procura nacional e importación con trazabilidad de origen y certificados de calidad.</p>
+      </div>
+      <div class="step">
+        <span class="num">M.04</span>
+        <h4>Instalación</h4>
+        <p>Equipo propio en sitio con HSE, supervisión QA/QC y protocolos firmados por etapa.</p>
+      </div>
+      <div class="step">
+        <span class="num">M.05</span>
+        <h4>Commissioning</h4>
+        <p>Pruebas de lazo, energizado, entrega de As-Built y dossier de calidad consolidado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROYECTOS ============== -->
+<section class="section" id="proyectos">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num"><b>§ 03</b><span>— Obras</span></div>
+      <div>
+        <h2>Proyectos <em>emblemáticos</em>.</h2>
+        <p style="margin-top:18px">Una muestra acotada del trabajo entregado para clientes en energía, petroquímica, farmacéutica y manufactura.</p>
+      </div>
+    </div>
+
+    <div class="proj-controls" style="margin-top:48px">
+      <div class="proj-filters" id="filters">
+        <button class="on" data-f="all">Todos</button>
+        <button data-f="energia">Energía</button>
+        <button data-f="petro">Petroquímica</button>
+        <button data-f="solar">Solar</button>
+        <button data-f="manu">Manufactura</button>
+        <button data-f="off">Off-shore</button>
+      </div>
+      <div class="eyebrow">14 proyectos visibles · 200+ en archivo</div>
+    </div>
+
+    <div class="proj-grid" id="projGrid">
+      <article class="card big" data-cat="energia">
+        <div class="card-img"><div class="clip"><img src="assets/photos/p29.png" alt="Central térmica CFE" /></div></div>
+        <div class="card-meta"><span class="tag-pill accent">Energía</span><span class="tag-pill">2023</span></div>
+        <div class="card-spec">CONTRATO · EPC<br/>POT · 250 MW<br/>DURACIÓN · 14 meses</div>
+        <div class="card-body"><h4>Central de Ciclo Combinado — Estado de Sonora</h4><span class="where">Instalación eléctrica MT + instrumentación de planta</span></div>
       </article>
 
-      <article class="svc reveal">
-        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-        <header class="svc-head"><span class="num">SVC-04</span><span class="tag">Asesoría</span></header>
-        <div class="svc-body">
-          <h3>Asesoría <em>técnica</em> y estratégica</h3>
-          <p class="desc">Para directores de proyecto, residentes y dueños que necesitan una segunda opinión antes de firmar, decidir o cambiar el alcance. Una llamada puede ahorrarte un trimestre.</p>
-        </div>
-        <ul class="svc-list">
-          <li>Segunda opinión técnica</li>
-          <li>Revisión de RFQ / contrato</li>
-          <li>Selección de proveedores</li>
-          <li>Análisis de riesgos</li>
-          <li>Acompañamiento a reuniones</li>
-          <li>Auditoría de cierre</li>
-        </ul>
-        <footer class="svc-foot"><span>ENTREGABLE · INFORME EJECUTIVO</span><a href="#contacto">Cotizar →</a></footer>
+      <article class="card tall" data-cat="solar">
+        <div class="card-img"><div class="clip"><img src="assets/photos/p28.png" alt="Campo solar" /></div></div>
+        <div class="card-meta"><span class="tag-pill accent">Solar</span><span class="tag-pill">2022</span></div>
+        <div class="card-spec">CAMPO · 754 MW<br/>HECTÁREAS · 2200</div>
+        <div class="card-body"><h4>Villanueva — Campo solar</h4><span class="where">Cableado de campo · tableros de combinación</span></div>
       </article>
 
+      <article class="card" data-cat="petro">
+        <div class="card-img"><div class="clip"><img src="assets/photos/p08.png" alt="Válvulas de instrumentación" /></div></div>
+        <div class="card-meta"><span class="tag-pill accent">Petroquímica</span></div>
+        <div class="card-body"><h4>Refinería Salamanca</h4><span class="where">Reinstrumentación · cierre de lazos</span></div>
+      </article>
+
+      <article class="card" data-cat="petro">
+        <div class="card-img"><div class="clip"><img src="assets/photos/p15.png" alt="Sensor H2S en planta" /></div></div>
+        <div class="card-meta"><span class="tag-pill accent">Petroquímica</span></div>
+        <div class="card-body"><h4>Refinería Cd. Madero</h4><span class="where">Detección H₂S · F&amp;G integrado</span></div>
+      </article>
+
+      <article class="card wide" data-cat="manu">
+        <div class="card-img"><div class="clip"><img src="assets/photos/p38.png" alt="Tablero de control eléctrico planta" /></div></div>
+        <div class="card-meta"><span class="tag-pill accent">Manufactura</span><span class="tag-pill">Farmacéutica</span></div>
+        <div class="card-spec">LÍNEAS · 4<br/>SLAs · 99.95%</div>
+        <div class="card-body"><h4>Planta farmacéutica — Toluca</h4><span class="where">Centro de carga, charolas y tableros de control</span></div>
+      </article>
+
+      <article class="card" data-cat="energia">
+        <div class="card-img"><div class="clip"><img src="assets/photos/p27.png" alt="Estructura industrial energía" /></div></div>
+        <div class="card-meta"><span class="tag-pill accent">Energía</span></div>
+        <div class="card-body"><h4>C.T. Rio Bravo IV</h4><span class="where">Soportería, charolas y cableado</span></div>
+      </article>
+
+      <article class="card" data-cat="solar">
+        <div class="card-img"><div class="clip"><img src="assets/photos/p25.png" alt="Estructura para campo solar" /></div></div>
+        <div class="card-meta"><span class="tag-pill accent">Solar</span></div>
+        <div class="card-body"><h4>Aura III · Aguascalientes</h4><span class="where">Trazado eléctrico de campo</span></div>
+      </article>
+
+      <article class="card" data-cat="off">
+        <div class="card-img"><div class="clip"><img src="assets/photos/p17.png" alt="Antena satelital instalación remota" /></div></div>
+        <div class="card-meta"><span class="tag-pill accent">Off-shore</span></div>
+        <div class="card-body"><h4>Plataforma marina · Sonda de Campeche</h4><span class="where">Telemetría · comunicación remota</span></div>
+      </article>
+
+      <article class="card" data-cat="manu">
+        <div class="card-img"><div class="clip"><img src="assets/photos/p36.png" alt="Conexión de tableros media tensión" /></div></div>
+        <div class="card-meta"><span class="tag-pill accent">Manufactura</span></div>
+        <div class="card-body"><h4>Planta automotriz · Bajío</h4><span class="where">Conexión MT y red de tierras</span></div>
+      </article>
+
+      <article class="card" data-cat="manu">
+        <div class="card-img"><div class="clip"><img src="assets/photos/p33.png" alt="Motor eléctrico WEG" /></div></div>
+        <div class="card-meta"><span class="tag-pill accent">Manufactura</span><span class="tag-pill">Alimentaria</span></div>
+        <div class="card-body"><h4>Planta alimentaria · Querétaro</h4><span class="where">Motores y arrancadores · variadores</span></div>
+      </article>
+
+      <article class="card" data-cat="petro">
+        <div class="card-img"><div class="clip"><img src="assets/photos/p20.png" alt="Estación de medición de gas combustible" /></div></div>
+        <div class="card-meta"><span class="tag-pill accent">Petroquímica</span></div>
+        <div class="card-body"><h4>Estación de medición — Coatzacoalcos</h4><span class="where">Detección de gas combustible</span></div>
+      </article>
+
+      <article class="card" data-cat="energia">
+        <div class="card-img"><div class="clip"><img src="assets/photos/p21.png" alt="Sensor H2S inteligente" /></div></div>
+        <div class="card-meta"><span class="tag-pill accent">Energía</span></div>
+        <div class="card-body"><h4>Hermosillo · planta de ciclo</h4><span class="where">Sensores H₂S inteligentes</span></div>
+      </article>
+
+      <article class="card" data-cat="petro">
+        <div class="card-img"><div class="clip"><img src="assets/photos/p34.png" alt="Operario en celda" /></div></div>
+        <div class="card-meta"><span class="tag-pill accent">Petroquímica</span></div>
+        <div class="card-body"><h4>Reinstalación celda 220 kV</h4><span class="where">Operación con planta en servicio</span></div>
+      </article>
+
+      <article class="card" data-cat="solar">
+        <div class="card-img"><div class="clip"><img src="assets/photos/p39.png" alt="Generador stand-by" /></div></div>
+        <div class="card-meta"><span class="tag-pill accent">Solar</span></div>
+        <div class="card-body"><h4>Stand-by · Agua Prieta II</h4><span class="where">Respaldo y BMS de banco de baterías</span></div>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- ============== SECTORES ============== -->
-<section class="section sectors-sec" id="sectores">
+<section class="section sectors" id="sectores">
   <div class="container">
     <div class="section-head">
-      <div class="section-num"><b>§ 02</b><span>— Sectores donde he operado</span></div>
+      <div class="section-num"><b>§ 04</b><span>— Sectores atendidos</span></div>
       <div>
         <h2>Donde la <em>tolerancia</em> es estrecha.</h2>
-        <p style="margin-top:18px">Industrias donde el error no es opción. Ahí es donde se aprende a leer la planta antes de que la planta hable.</p>
+        <p style="margin-top:18px">Industrias con normativas estrictas y procesos críticos. Ahí es donde IEPI se siente como en casa.</p>
       </div>
     </div>
 
     <div class="sector-grid">
-      <div class="sec">
-        <span class="n">01 · ENERGÍA<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></span>
-        <h4>Refinerías</h4>
-        <p>Reinstrumentación, lazos de control, detección de fuego y gas, áreas clasificadas.</p>
-      </div>
-      <div class="sec">
-        <span class="n">02 · PETROQUÍMICA<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3v6L4 17a3 3 0 0 0 2.6 4.5h10.8A3 3 0 0 0 20 17l-5-8V3"/><path d="M9 3h6M7 14h10"/></svg></span>
-        <h4>Complejos petroquímicos</h4>
-        <p>Plantas de proceso continuo, instrumentación crítica, seguridad funcional.</p>
-      </div>
-      <div class="sec">
-        <span class="n">03 · GENERACIÓN<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L3 14h7v8l10-12h-7z"/></svg></span>
-        <h4>Ciclos combinados</h4>
-        <p>Centrales térmicas, subestaciones, cableado de control, protección y medida.</p>
-      </div>
-      <div class="sec">
-        <span class="n">04 · RENOVABLES<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></span>
-        <h4>Parques solares</h4>
-        <p>Campos fotovoltaicos a gran escala, tableros de combinación, BMS, comunicación.</p>
-      </div>
-      <div class="sec">
-        <span class="n">05 · OFF-SHORE<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18h18M5 18l1-5h12l1 5M8 13l2-6h4l2 6M12 7V3M10 5h4"/></svg></span>
-        <h4>Plataformas marinas</h4>
-        <p>Sonda de Campeche, telemetría, comunicación remota, instrumentación en zona clasificada.</p>
-      </div>
-      <div class="sec">
-        <span class="n">06 · CEMENTO<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V11l7-7 7 7v10M9 21v-6h6v6"/></svg></span>
-        <h4>Cementeras</h4>
-        <p>Hornos, molinos, instrumentación robusta, variadores en ambientes abrasivos.</p>
-      </div>
-      <div class="sec">
-        <span class="n">07 · PAPEL<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="1"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="14" y2="16"/></svg></span>
-        <h4>Papeleras</h4>
-        <p>Líneas continuas, control de humedad, variadores, sincronismo de máquinas.</p>
-      </div>
-      <div class="sec">
-        <span class="n">08 · LABORATORIO<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 2v6L4 18a2 2 0 0 0 1.7 3h12.6a2 2 0 0 0 1.7-3L15 8V2M9 2h6"/></svg></span>
-        <h4>Laboratorios</h4>
-        <p>Calibración, instrumentación analítica, redes de gases especiales, trazabilidad NIST.</p>
-      </div>
-      <div class="sec">
-        <span class="n">09 · AUTOMOTRIZ<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 13l1.5-5h11L19 13M5 13h14v5H5zM7 18v2M17 18v2"/></svg></span>
-        <h4>Automotriz</h4>
-        <p>Plantas de ensamble, pintura, tratamiento superficial. Líneas de alto throughput.</p>
-      </div>
+      <div class="sec"><span class="ico">↗</span><span class="n">01 · ENERGÉTICA</span><h4>Energía</h4><p>Centrales de ciclo, térmicas y subestaciones eléctricas de alta y media tensión.</p></div>
+      <div class="sec"><span class="ico">↗</span><span class="n">02 · PETROQUÍMICA</span><h4>Petroquímica</h4><p>Refinerías, plantas de proceso, estaciones de medición y plataformas marinas.</p></div>
+      <div class="sec"><span class="ico">↗</span><span class="n">03 · QUÍMICA</span><h4>Química</h4><p>Procesos continuos con instrumentación crítica y áreas clasificadas.</p></div>
+      <div class="sec"><span class="ico">↗</span><span class="n">04 · FARMACÉUTICA</span><h4>Farmacéutica</h4><p>Manufactura validada GMP con trazabilidad documental completa.</p></div>
+      <div class="sec"><span class="ico">↗</span><span class="n">05 · ALIMENTARIA</span><h4>Alimentaria</h4><p>Líneas de producción con higiene operativa y eficiencia energética.</p></div>
+      <div class="sec"><span class="ico">↗</span><span class="n">06 · AUTOMOTRIZ</span><h4>Automotriz</h4><p>Plantas de ensamble, pintura y tratamiento — alto throughput.</p></div>
+      <div class="sec"><span class="ico">↗</span><span class="n">07 · CEMENTERA</span><h4>Cementera &amp; Papel</h4><p>Hornos, molinos y procesos abrasivos con instrumentación robusta.</p></div>
+      <div class="sec"><span class="ico">↗</span><span class="n">08 · RENOVABLES</span><h4>Solar &amp; Renovables</h4><p>Campos fotovoltaicos a gran escala y plantas termosolares.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============== MODALIDAD DE COBRO ============== -->
-<section class="section modalidad" id="modalidad">
+<!-- ============== CLIENTES ============== -->
+<section class="section clients">
   <div class="container">
     <div class="section-head">
-      <div class="section-num"><b>§ 03</b><span>— Modalidad de cobro</span></div>
+      <div class="section-num"><b>§ 05</b><span>— Clientes</span></div>
       <div>
-        <h2>Por hora, por día, <em>o por proyecto</em>.</h2>
-        <p style="margin-top:18px">Tres formas de contratar. Cambias según el tamaño del trabajo. Sin contratos leoninos, sin mensualidades mínimas.</p>
+        <h2>Operadores que <em>han confiado</em> en IEPI.</h2>
+        <p style="margin-top:18px">Una selección de clientes finales y EPCs con quienes hemos colaborado en proyectos de planta y campo en los últimos 35 años.</p>
       </div>
     </div>
 
-    <div class="mod-wrap">
+    <div class="client-grid">
+      <div class="client"><span class="nm">CFE</span><span class="sct">Energía</span></div>
+      <div class="client"><span class="nm">PEMEX</span><span class="sct">Petroquímica</span></div>
+      <div class="client"><span class="nm">ABB</span><span class="sct">EPC · Eléctrico</span></div>
+      <div class="client"><span class="nm">Abengoa</span><span class="sct">EPC · Solar</span></div>
+      <div class="client"><span class="nm">Acciona</span><span class="sct">EPC · Energía</span></div>
+      <div class="client"><span class="nm">Alstom</span><span class="sct">Generación</span></div>
+      <div class="client"><span class="nm">Avanzia</span><span class="sct">EPC</span></div>
+      <div class="client"><span class="nm">BASF</span><span class="sct">Química</span></div>
+      <div class="client"><span class="nm">Bayer</span><span class="sct">Farma · Química</span></div>
+      <div class="client"><span class="nm">Chrysler</span><span class="sct">Automotriz</span></div>
+      <div class="client"><span class="nm">Ford</span><span class="sct">Automotriz</span></div>
+      <div class="client"><span class="nm">GlaxoSmithKline</span><span class="sct">Farmacéutica</span></div>
+      <div class="client"><span class="nm">Kimberly-Clark</span><span class="sct">Papelera</span></div>
+      <div class="client"><span class="nm">Nestlé</span><span class="sct">Alimentaria</span></div>
+      <div class="client"><span class="nm">Pfizer</span><span class="sct">Farmacéutica</span></div>
+      <div class="client"><span class="nm">Sanofi</span><span class="sct">Farmacéutica</span></div>
+      <div class="client"><span class="nm">Schneider</span><span class="sct">Eléctrico</span></div>
+      <div class="client"><span class="nm">Telvent</span><span class="sct">Automatización</span></div>
+      <div class="client"><span class="nm">Saint-Gobain</span><span class="sct">Vidrio · Industrial</span></div>
+      <div class="client"><span class="nm">Pemex Refinación</span><span class="sct">Refino</span></div>
+      <div class="client"><span class="nm">Iberdrola</span><span class="sct">Energía</span></div>
+      <div class="client"><span class="nm">+ 30 más</span><span class="sct">Archivo extendido</span></div>
+      <div class="client"><span class="nm">RFQ →</span><span class="sct">Hable con nosotros</span></div>
+      <div class="client"><span class="nm">2026</span><span class="sct">Capacidad disponible</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CALIDAD ============== -->
+<section class="section quality" id="calidad">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num"><b>§ 06</b><span>— Calidad &amp; certificaciones</span></div>
       <div>
-        <div class="mod-toggle" role="tablist" aria-label="Modalidad de cobro">
-          <button data-mod="hora" role="tab" aria-selected="false">Por hora</button>
-          <button data-mod="dia" role="tab" aria-selected="false">Por día</button>
-          <button class="on" data-mod="proyecto" role="tab" aria-selected="true">Por proyecto</button>
+        <h2>Cada entregable, <em>auditable</em>.</h2>
+        <p style="margin-top:18px">Un dossier de calidad propio acompaña al alcance contractual: trazabilidad, listas de prueba, certificados de origen y planos As-Built de cierre.</p>
+      </div>
+    </div>
+
+    <div class="q-wrap">
+      <aside class="spec-sheet reveal" aria-label="Hoja técnica IEPI">
+        <h5><span>QA / QC · DOCUMENTO DE CONTROL</span><span class="rev">REV. 2026.01</span></h5>
+        <div class="spec-row"><span class="k">Sistema gestión</span><span class="v">ISO 9001 — equivalencia operativa</span></div>
+        <div class="spec-row"><span class="k">Dossier por proyecto</span><span class="v ok">Incluido</span></div>
+        <div class="spec-row"><span class="k">Pruebas de lazo</span><span class="v">100% documentadas</span></div>
+        <div class="spec-row"><span class="k">Calibración</span><span class="v">Equipo certificado · trazabilidad NIST</span></div>
+        <div class="spec-row"><span class="k">Áreas clasificadas</span><span class="v">Cumplimiento NOM-001-SEDE</span></div>
+        <div class="spec-row"><span class="k">Seguridad funcional</span><span class="v">IEC 61511 · SIL evaluado</span></div>
+        <div class="spec-row"><span class="k">F&amp;G</span><span class="v">NFPA 72 / API RP-14C</span></div>
+        <div class="spec-row"><span class="k">Plano As-Built</span><span class="v ok">Entregado al cierre</span></div>
+        <div class="spec-row"><span class="k">HSE en sitio</span><span class="v ok">Inducción + EPP + JSA</span></div>
+        <div class="spec-row"><span class="k">Tiempo respuesta RFQ</span><span class="v">≤ 24 h hábiles</span></div>
+        <div class="spec-row"><span class="k">Vigencia técnica</span><span class="v">Indefinida · revisión anual</span></div>
+      </aside>
+
+      <div class="q-copy reveal">
+        <h3>La diferencia entre <em>terminado</em> y entregado.</h3>
+        <p>Un cableado puede estar “terminado” y no haberse probado. Una válvula puede estar instalada y no estar calibrada. El dossier de calidad de IEPI cierra esa brecha: cada componente queda documentado, firmado y trazable, listo para auditoría operativa o regulatoria.</p>
+        <div class="q-pillars">
+          <div><b>Trazabilidad</b><span>Origen · lote · serie</span></div>
+          <div><b>Verificación</b><span>QA/QC independiente</span></div>
+          <div><b>Documentación</b><span>As-Built · firmas</span></div>
+          <div><b>Continuidad</b><span>Soporte post-arranque</span></div>
         </div>
-        <div class="mod-display" aria-live="polite">
-          <span class="currency">$</span><span id="modPrice">A convenir</span><span class="unit" id="modUnit">según alcance</span>
-        </div>
-        <p class="mod-desc" id="modDesc">Ideal para revisiones puntuales, una segunda opinión o un acompañamiento de medio día. Mínimo 4 horas continuas. Reporte escrito al cierre.</p>
-        <ul class="mod-list" id="modList">
-          <li>Disponibilidad en CDMX y EdoMex</li>
-          <li>Reporte escrito al cierre</li>
-          <li>Sin costo por desplazamiento local</li>
-        </ul>
-      </div>
-
-      <div class="mod-side">
-        <h4>¿Cómo funciona?</h4>
-        <p>1. <strong>Conversamos 20 minutos</strong> por teléfono o videollamada. Me cuentas el alcance.</p>
-        <p>2. <strong>Te digo en esa llamada</strong> si tiene sentido que entre y en qué modalidad te conviene más.</p>
-        <p>3. <strong>Coordinamos fecha</strong> según la urgencia.&nbsp;</p>
-        <p>4. <strong>Al cierre</strong>: nota técnica firmada, reporte escrito y, si aplica, plan de pendientes.</p>
-        <a href="https://wa.me/525536174459?text=Hola%20V%C3%ADctor%2C%20quiero%20agendar%20la%20llamada%20de%2020%20minutos." class="mod-cta" target="_blank" rel="noopener">
-          Agendar los 20 minutos
-          <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
-        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============== COBERTURA ============== -->
-<section class="section coverage" id="cobertura">
+<!-- ============== ABOUT ============== -->
+<section class="section about" id="nosotros">
   <div class="container">
     <div class="section-head">
-      <div class="section-num"><b>§ 04</b><span>— Cobertura</span></div>
+      <div class="section-num"><b>§ 07</b><span>— Nosotros</span></div>
       <div>
-        <h2>CDMX y <em>Estado de México</em>.</h2>
-        <p style="margin-top:18px">Sin vuelos, sin viáticos. Sin la fatiga de un proyecto foráneo. Para que la cabeza esté en tu planta, no en el aeropuerto.</p>
-      </div>
-    </div>
-
-    <div class="cov-grid">
-      <div class="cov"><h5>Zona metropolitana</h5><p>Ciudad de México<small>Todas las alcaldías</small></p></div>
-      <div class="cov"><h5>Estado de México</h5><p>Naucalpan, Tlalnepantla, Ecatepec, Cuautitlán, Tultitlán<small>Y corredor industrial norte</small></p></div>
-      <div class="cov"><h5>Valle de Toluca</h5><p>Toluca, Lerma, San Mateo Atenco<small>Cluster automotriz y farmacéutico</small></p></div>
-      <div class="cov"><h5>Cuautla · Cuernavaca</h5><p>Disponible bajo cotización<small>Traslado de medio día</small></p></div>
-      <div class="cov"><h5>Puebla · Querétaro</h5><p>Disponible bajo cotización<small>Para proyectos de 1 semana o más</small></p></div>
-      <div class="cov"><h5>Fuera de cobertura</h5><p>No disponible por ahora<small>Plataformas, foráneos largos, obra física</small></p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== SOBRE VÍCTOR ============== -->
-<section class="section about" id="sobre-mi">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-num"><b>§ 05</b><span>— Sobre mí</span></div>
-      <div>
-        <h2>Toda una vida <em>en planta</em>.</h2>
-        <p style="margin-top:18px">De ayudante a director. De director a supervisor. La misma planta, los mismos problemas, vistos desde tres sillas distintas.</p>
+        <h2>Tres décadas <em>en planta</em>.</h2>
+        <p style="margin-top:18px">No hacemos ingeniería desde un escritorio. La hacemos desde el campo, en arnés, con el plano sucio y la respuesta correcta.</p>
       </div>
     </div>
 
     <div class="about-grid">
       <div>
-        <p class="lead">Profesional de la ingeniería con 50 años de trayectoria sólida y comprobada en la ejecución, dirección técnica y entrega de proyectos industriales de alta complejidad.</p>
-        <p>A través de IEPI he liderado proyectos llave en mano, desde la recepción de ingeniería de detalle hasta la entrega final del dossier de calidad. Hoy me dedico exclusivamente a la <strong>supervisión externa, auditoría técnica y asesoría especializada</strong> para proyectos en la zona metropolitana.</p>
-        <p>Aporto medio siglo de experiencia en campo para garantizar que contratistas y proveedores ejecuten los trabajos exactamente bajo las especificaciones de ingeniería, <em>mitigando riesgos, previniendo sobrecostos por re-trabajos y asegurando el estricto cumplimiento de los tiempos de entrega</em>.</p>
-
+        <p class="lead">IEPI nace en 1990 con una idea sencilla: una sola firma capaz de entregar la parte eléctrica, instrumental y de seguridad de una planta — bajo un mismo dossier de calidad. Hoy somos referencia en sectores donde el error no es opción.</p>
+        <p>Operamos con un núcleo técnico estable y equipos rotativos que se forman específicamente para cada proyecto. Nuestra ventaja no es el tamaño: es la decisión de no diluir el criterio técnico. Cada cotización pasa por ingeniería senior, y cada cierre por validación independiente.</p>
         <div class="values">
-          <div><h5>Calidad hasta el dossier</h5><span>Cada firma cuenta</span></div>
-          <div><h5>Mitigar, no reaccionar</h5><span>El riesgo se ve antes</span></div>
-          <div><h5>Cero re-trabajos</h5><span>La planeación evita el costo</span></div>
-          <div><h5>Planta, no escritorio</h5><span>El criterio se forma en sitio</span></div>
+          <div><h5>Calidad</h5><span>En cada proceso, producto y servicio.</span></div>
+          <div><h5>Seguridad</h5><span>Prioridad sobre velocidad. Siempre.</span></div>
+          <div><h5>Compromiso</h5><span>Con clientes, entorno y sociedad.</span></div>
+          <div><h5>Innovación</h5><span>La mejor solución, no la habitual.</span></div>
         </div>
       </div>
 
       <aside class="leader">
-        <!-- Foto real de Víctor -->
-        <div class="photo">
-          <img src="assets/victor.jpg" alt="Ing. Víctor Vargas Carrillo" loading="lazy" />
-          <span class="photo-tag">VVC · 1976 — 2026</span>
-          <span class="photo-meta">CDMX · EDOMEX<br/>SUPERVISIÓN</span>
-        </div>
+        <div class="photo"><div class="clip"><img src="assets/photos/p09.png" alt="Equipo IEPI en obra" /></div></div>
         <div class="leader-info">
           <div>
             <h4>Ing. Víctor Vargas Carrillo</h4>
-            <span>Consultor Senior · Fundador IEPI (retirado)</span>
+            <span>Director General · Fundador</span>
           </div>
           <span class="sig">v.v.c</span>
         </div>
@@ -983,90 +871,81 @@ body.impeccable-on [data-imp-editable][contenteditable="true"]{outline:2px solid
   </div>
 </section>
 
-<!-- ============== CONTACTO ============== -->
+<!-- ============== CONTACT ============== -->
 <section class="section contact" id="contacto">
   <div class="container">
     <div class="section-head">
-      <div class="section-num"><b>§ 06</b><span>— Contacto</span></div>
+      <div class="section-num"><b>§ 08</b><span>— Contacto</span></div>
       <div>
-        <h2>Agendemos <em>20 minutos</em>.</h2>
-        <p style="margin-top:18px">Cuéntame el alcance. Te digo en esa misma llamada si tiene sentido que entre y cómo. Si no, te recomiendo a alguien.</p>
+        <h2>Pasemos del <em>plano</em> a la planta.</h2>
+        <p style="margin-top:18px">Adjunte planos, alcance o RFQ. Le respondemos en menos de 24 horas hábiles con un primer estimado técnico y comercial.</p>
       </div>
     </div>
 
-    <div class="cta-grid">
+    <div class="rfq">
+      <form class="rfq-form" id="rfqForm" novalidate>
+        <div class="field"><label>Nombre completo</label><input required name="nombre" placeholder="Lic. María Hernández"/></div>
+        <div class="field"><label>Empresa</label><input required name="empresa" placeholder="Operadora del Bajío"/></div>
+        <div class="field"><label>Correo corporativo</label><input required type="email" name="email" placeholder="m.hernandez@empresa.com"/></div>
+        <div class="field"><label>Teléfono</label><input name="tel" placeholder="+52 ··"/></div>
 
-      <a href="https://wa.me/525536174459?text=Hola%20V%C3%ADctor%2C%20me%20interesa%20la%20consultor%C3%ADa." class="cta-card" target="_blank" rel="noopener">
-        <div>
-          <div class="l">WhatsApp · respuesta rápida</div>
-          <div class="v">(55) 36 17 44 59<small>Disponible L–V · 09:00 – 19:00</small></div>
+        <div class="field"><label>Servicio de interés</label>
+          <select name="servicio">
+            <option>Instalaciones Eléctricas</option>
+            <option>Instrumentación de Proceso</option>
+            <option>Sistemas de Fuego &amp; Gas</option>
+            <option>Calibración / As-Built</option>
+            <option>Proyecto integral · varios servicios</option>
+          </select>
         </div>
-        <div class="arrow-row"><span>Iniciar conversación</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
-      </a>
-
-      <a href="tel:+525536174459" class="cta-card">
-        <div>
-          <div class="l">Teléfono directo</div>
-          <div class="v">(55) 36 17 44 59<small>Para llamadas concertadas · 20 min</small></div>
-        </div>
-        <div class="arrow-row"><span>Llamar ahora</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
-      </a>
-
-      <a href="mailto:iepisadecv@gmail.com?subject=Consulta%20de%20supervisi%C3%B3n&body=Hola%20V%C3%ADctor%2C%20me%20interesa%20la%20consultor%C3%ADa%20industrial.%0A%0AProyecto%3A%20%0AUbicaci%C3%B3n%3A%20%0AFase%3A%20%0A%0AGracias." class="cta-card">
-        <div>
-          <div class="l">Correo</div>
-          <div class="v">iepisadecv@gmail.com<small>Para alcances detallados y RFQ</small></div>
-        </div>
-        <div class="arrow-row"><span>Enviar correo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
-      </a>
-
-    </div>
-
-    <div class="form-wrap">
-      <form class="form" id="contactForm" novalidate>
-        <div class="field"><label>Nombre completo</label><input required name="nombre" placeholder="¿Cómo te llamas?" autocomplete="name"/></div>
-        <div class="field"><label>Empresa u organización</label><input name="empresa" placeholder="Opcional" autocomplete="organization"/></div>
-        <div class="field"><label>Correo</label><input required type="email" name="email" placeholder="tu@empresa.com" autocomplete="email"/></div>
-        <div class="field"><label>Teléfono</label><input type="tel" name="tel" placeholder="+52 55 ..." autocomplete="tel"/></div>
-
         <div class="field"><label>Sector</label>
           <select name="sector">
-            <option>Refinería / Petroquímica</option>
-            <option>Ciclo combinado / Generación</option>
-            <option>Parque solar / Renovables</option>
-            <option>Plataforma marina</option>
-            <option>Cementera / Papelera</option>
-            <option>Laboratorio / Farmacéutica</option>
-            <option>Automotriz</option>
-            <option>Otro</option>
-          </select>
-        </div>
-        <div class="field"><label>Modalidad de tu interés</label>
-          <select name="modalidad">
-            <option>Por hora</option>
-            <option>Por día</option>
-            <option>Por proyecto</option>
-            <option>Por definir (lo platicamos)</option>
+            <option>Energía</option><option>Petroquímica</option><option>Química</option>
+            <option>Farmacéutica</option><option>Alimentaria</option><option>Automotriz</option>
+            <option>Cementera</option><option>Papelera</option><option>Solar / Renovables</option><option>Otro</option>
           </select>
         </div>
 
-        <div class="field full"><label>Cuéntame el alcance</label>
-          <textarea required name="mensaje" rows="4" placeholder="Ubicación, sistema, fase del proyecto, fechas tentativas, qué te gustaría que revisara..."></textarea>
+        <div class="field full"><label>Alcance preliminar</label>
+          <textarea required name="mensaje" rows="4" placeholder="Describa brevemente: ubicación, sistema, fechas tentativas, normativas aplicables..."></textarea>
         </div>
+
+        <label class="attach" for="archivo">
+          <div class="l"><b>Adjuntar planos, RFQ o PID</b>PDF · DWG · ZIP · ≤ 25MB</div>
+          <input id="archivo" name="archivo" type="file" multiple />
+          <span class="pick">Seleccionar archivo</span>
+        </label>
 
         <div class="submit-row">
-          <button type="submit" class="cta">Enviar mensaje
-            <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
+          <button type="submit" class="cta">Enviar solicitud
+            <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
           </button>
-          <span class="note">Al enviar aceptas que Víctor te contacte para discutir tu requerimiento. Sin spam.</span>
+          <span class="note">Al enviar acepta que IEPI le contacte para discutir su requerimiento.</span>
         </div>
       </form>
 
-      <aside class="mod-side" style="color:color-mix(in oklab, var(--bg) 80%, transparent)">
-        <h4 style="color:var(--bg)">Antes de escribir</h4>
-        <p style="color:color-mix(in oklab, var(--bg) 70%, transparent)">Si tu proyecto está <strong style="color:var(--accent)">fuera de CDMX o EdoMex</strong>, probablemente no soy la persona. Te recomiendo a alguien del ramo que sí cubra tu zona.</p>
-        <p style="color:color-mix(in oklab, var(--bg) 70%, transparent)">Si lo que necesitas es <strong style="color:var(--accent)">mano de obra para instalación</strong> o fabricación, no soy yo. Para eso hay cuadrillas y talleres. Yo superviso lo que ellos hacen.</p>
-        <p style="color:color-mix(in oklab, var(--bg) 70%, transparent)">Si lo que necesitas es un <strong style="color:var(--accent)">par técnico con criterio</strong> que se siente a revisar tu proyecto contigo — sí, hablamos.</p>
+      <aside class="contact-info">
+        <div class="block">
+          <div class="l">Oficina</div>
+          <div class="v">P.º del Verano 314<br/><small>La Florida · 53160 Naucalpan de Juárez · Estado de México</small></div>
+        </div>
+        <div class="block">
+          <div class="l">Teléfonos</div>
+          <div class="v"><a href="tel:+525526376040">(55) 26 37 60 40</a><br/><a href="tel:+525536174459">(55) 36 17 44 59</a></div>
+        </div>
+        <div class="block">
+          <div class="l">Correo</div>
+          <div class="v"><a href="mailto:info@iepi.com.mx">info@iepi.com.mx</a><br/><small>RFQ y cotizaciones: rfq@iepi.com.mx</small></div>
+        </div>
+        <div class="block">
+          <div class="l">Horario</div>
+          <div class="v">Lun – Vie · 09:00 – 18:00<br/><small>Operación 24/7 en obras activas</small></div>
+        </div>
+
+        <div class="mini-map" aria-hidden="true">
+          <div class="pin"></div>
+          <div class="label">NAUCALPAN · CDMX</div>
+        </div>
       </aside>
     </div>
   </div>
@@ -1078,461 +957,117 @@ body.impeccable-on [data-imp-editable][contenteditable="true"]{outline:2px solid
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="brand">
-          <span class="mark" style="background:var(--bg);color:var(--ink)">VVC</span>
-          <span><span class="name" style="color:var(--bg)">Víctor Vargas Carrillo</span><span class="sub">Consultoría Industrial · 50+ años</span></span>
+          <span class="mark" style="background:var(--bg);color:var(--ink)">IE</span>
+          <span><span class="name" style="color:var(--bg)">IEPI</span><span class="sub">S.A. de C.V. · Est. 1990</span></span>
         </div>
-        <p>Supervisión de ingeniería de detalle, instalaciones y pruebas. CDMX y Estado de México. Por hora, día o proyecto. Sin trabajo físico, con todo el criterio.</p>
+        <p>Instrumentación y Electrosistemas en Procesos Industriales. Ingeniería de precisión para la industria mexicana — diseño, suministro, instalación y puesta en marcha.</p>
       </div>
 
       <div>
         <h6>Servicios</h6>
         <ul>
-          <li><a href="#servicios">Ingeniería de detalle</a></li>
-          <li><a href="#servicios">Supervisión de instalaciones</a></li>
-          <li><a href="#servicios">Pruebas y commissioning</a></li>
-          <li><a href="#servicios">Asesoría técnica</a></li>
+          <li><a href="#servicios">Eléctrico</a></li>
+          <li><a href="#servicios">Instrumentación</a></li>
+          <li><a href="#servicios">Fuego &amp; Gas</a></li>
+          <li><a href="#servicios">Calibración / As-Built</a></li>
         </ul>
       </div>
       <div>
-        <h6>Sitio</h6>
+        <h6>Empresa</h6>
         <ul>
-          <li><a href="#manifiesto">Manifiesto</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#calidad">Calidad</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
           <li><a href="#sectores">Sectores</a></li>
-          <li><a href="#modalidad">Modalidad</a></li>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="/equipo/">Catálogo de equipo en venta</a></li>
         </ul>
       </div>
       <div>
         <h6>Contacto</h6>
         <ul>
-          <li><a href="https://wa.me/525536174459" target="_blank" rel="noopener">WhatsApp</a></li>
-          <li><a href="tel:+525536174459">(55) 36 17 44 59</a></li>
-          <li><a href="mailto:iepisadecv@gmail.com">iepisadecv@gmail.com</a></li>
-          <li><a href="#cobertura">CDMX · EdoMex</a></li>
+          <li><a href="#contacto">Solicitar RFQ</a></li>
+          <li><a href="tel:+525526376040">(55) 26 37 60 40</a></li>
+          <li><a href="mailto:info@iepi.com.mx">info@iepi.com.mx</a></li>
+          <li><a href="#contacto">Naucalpan, EDMX</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <div>© 2026 Víctor Vargas Carrillo · Consultoría Industrial. Hecho en México.</div>
-      <div><span class="pulse">● </span>Disponible — última actualización <span id="builtAt"></span></div>
-      <div>
-        <a href="/equipo/" style="color:color-mix(in oklab, var(--bg) 60%, transparent);text-decoration:underline">Catálogo de equipo en venta → /equipo/</a>
-      </div>
+      <div>© 1990 – 2026 IEPI S.A. de C.V. · Hecho en México.</div>
+      <div><span class="pulse">● </span>Sistema operativo — última actualización <span id="builtAt"></span></div>
+      <div>Aviso de privacidad · Términos</div>
     </div>
   </div>
 </footer>
 
-<!-- ============== WHATSAPP FLOAT ============== -->
-<a href="https://wa.me/525536174459?text=Hola%20V%C3%ADctor%2C%20me%20interesa%20la%20consultor%C3%ADa%20industrial." class="wa-float" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp">
-  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
-    <path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.5 2.1 7.9L0 32l8.4-2.5C10.7 31 13.3 31.6 16 31.6c8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.4c-2.4 0-4.7-.6-6.7-1.8l-.5-.3-5 1.5 1.4-4.8-.3-.5C3.6 21 2.8 18.5 2.8 16 2.8 8.7 8.7 2.8 16 2.8S29.2 8.7 29.2 16 23.3 28.8 16 28.8zm8.7-10.4c-.5-.2-2.8-1.4-3.2-1.5-.4-.2-.8-.2-1.1.2-.3.5-1.2 1.5-1.5 1.8-.3.3-.5.3-1 .1-.5-.2-2-.7-3.8-2.3-1.4-1.2-2.3-2.8-2.6-3.3-.3-.5 0-.7.2-1 .2-.2.5-.5.7-.8.2-.3.3-.5.5-.8.2-.3.1-.6 0-.8-.1-.2-1.1-2.6-1.5-3.6-.4-1-.8-.8-1.1-.8-.3 0-.6 0-.9 0-.3 0-.8.1-1.2.6-.4.5-1.6 1.5-1.6 3.7 0 2.2 1.6 4.3 1.8 4.6.2.3 3.2 4.9 7.8 6.9 1.1.5 1.9.7 2.6.9 1.1.3 2 .3 2.8.2.8-.1 2.6-1 2.9-2.1.4-1 .4-1.9.3-2.1-.1-.2-.4-.3-.9-.5z"/>
-  </svg>
-</a>
-
-<!-- ============== DIALOG (éxito form) ============== -->
-<dialog id="okDialog" aria-labelledby="okTitle">
-  <div class="ok-body">
-    <h3 id="okTitle">Mensaje enviado · gracias</h3>
-    <p>Te respondo en menos de 24 horas hábiles. Si es urgente, escríbeme directo por WhatsApp al (55) 36 17 44 59.</p>
-    <form method="dialog"><button>Cerrar</button></form>
-  </div>
-</dialog>
-
 <script>
-/* ============================================================
-   Scripts · vanilla JS · sin dependencias
-   ============================================================ */
-
-// 1) Reloj CDMX
-(function clock(){
+// ---------- Clock (Mexico City) ----------
+function tick(){
+  const d = new Date();
+  // Get hh:mm:ss in CDMX timezone
+  const fmt = new Intl.DateTimeFormat('es-MX', { hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false, timeZone:'America/Mexico_City' });
   const el = document.getElementById('clock');
-  if(!el) return;
-  const fmt = new Intl.DateTimeFormat('es-MX',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false,timeZone:'America/Mexico_City'});
-  const tick = () => { el.textContent = fmt.format(new Date()); };
-  tick(); setInterval(tick, 1000);
-})();
+  if(el) el.textContent = fmt.format(d);
+}
+tick(); setInterval(tick, 1000);
 
-// 2) Fecha de "última actualización"
-(function builtAt(){
+// ---------- Built at ----------
+(function(){
   const el = document.getElementById('builtAt');
   if(!el) return;
-  el.textContent = new Date().toLocaleDateString('es-MX',{year:'numeric',month:'short',day:'2-digit'}).toUpperCase();
+  const d = new Date();
+  el.textContent = d.toLocaleDateString('es-MX', { year:'numeric', month:'short', day:'2-digit' }).toUpperCase();
 })();
 
-// 3) Toggle de modalidad de cobro
-(function modalidad(){
-  const root = document.querySelector('.mod-wrap');
-  if(!root) return;
-  const tabs = root.querySelectorAll('.mod-toggle button');
-  const data = {
-    hora: {
-      price: '--',
-      unit: 'MXN / hora',
-      desc: 'Ideal para revisiones puntuales, una segunda opinión o un acompañamiento de medio día. Mínimo 4 horas continuas. Reporte escrito al cierre.',
-      list: ['Disponibilidad en CDMX y EdoMex','Reporte escrito al cierre','Sin costo por desplazamiento local']
-    },
-    dia: {
-      price: '--',
-      unit: 'MXN / día (8 h)',
-      desc: 'Para supervisiones de jornada completa. Incluye revisión en sitio, validación de avance, firma de protocolos pendientes y resumen al cierre del día.',
-      list: ['Jornada de 8 horas','Reporte del día','Una visita de seguimiento incluida']
-    },
-    proyecto: {
-      price: 'A convenir',
-      unit: 'según alcance',
-      desc: 'Para commissioning, pruebas de aceptación o supervisión de fase completa. Precio cerrado contra alcance firmado. Incluye hitos y entregables documentados.',
-      list: ['Alcance cerrado por escrito','Hitos y entregables definidos','Dossier de cierre firmado']
-    }
-  };
-  function render(key){
-    const d = data[key];
-    document.getElementById('modPrice').textContent = d.price;
-    document.getElementById('modUnit').textContent = d.unit;
-    document.getElementById('modDesc').textContent = d.desc;
-    const list = document.getElementById('modList');
-    list.innerHTML = d.list.map(t => `<li>${t}</li>`).join('');
-  }
-  tabs.forEach(b => b.addEventListener('click', () => {
-    tabs.forEach(x => { x.classList.remove('on'); x.setAttribute('aria-selected','false'); });
-    b.classList.add('on'); b.setAttribute('aria-selected','true');
-    render(b.dataset.mod);
-  }));
-})();
-
-// 4) Reveal on scroll
-(function reveal(){
-  if(!('IntersectionObserver' in window)){
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
-    return;
-  }
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
-  },{threshold: 0.12, rootMargin: '0px 0px -8% 0px'});
-  document.querySelectorAll('.reveal, .section-head, .svc, .sec, .cta-card, .cov, .leader').forEach(el => {
-    el.classList.add('reveal'); io.observe(el);
-  });
-})();
-
-// 5) Counters animados al entrar al viewport
-(function counters(){
-  const els = document.querySelectorAll('[data-count]');
-  if(!els.length || !('IntersectionObserver' in window)) return;
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e => {
-      if(!e.isIntersecting) return;
-      const el = e.target;
-      const target = parseInt(el.dataset.count, 10);
-      const duration = 1200;
-      const start = performance.now();
-      const animate = (now) => {
-        const t = Math.min((now - start) / duration, 1);
-        // ease-out cubic
-        const eased = 1 - Math.pow(1 - t, 3);
-        el.textContent = Math.round(target * eased).toString();
-        if(t < 1) requestAnimationFrame(animate);
-        else el.textContent = target.toString();
-      };
-      requestAnimationFrame(animate);
-      io.unobserve(el);
+// ---------- Project filters ----------
+const filters = document.getElementById('filters');
+const grid = document.getElementById('projGrid');
+if(filters && grid){
+  filters.addEventListener('click', e=>{
+    const b = e.target.closest('button');
+    if(!b) return;
+    [...filters.children].forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    const f = b.dataset.f;
+    [...grid.children].forEach(card=>{
+      const show = (f==='all') || (card.dataset.cat===f);
+      card.style.display = show ? '' : 'none';
     });
-  },{threshold: 0.5});
-  els.forEach(el => io.observe(el));
-})();
-
-// 6) Mobile nav toggle
-(function navToggle(){
-  const btn = document.getElementById('navToggle');
-  const links = document.getElementById('navLinks');
-  if(!btn || !links) return;
-  btn.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
-  // Cierra al hacer click en un link
-  links.addEventListener('click', e => {
-    if(e.target.tagName === 'A'){
-      links.classList.remove('open');
-      btn.setAttribute('aria-expanded','false');
-    }
-  });
-})();
+}
 
-// 7) Form · validación HTML5 + dialog de éxito
-(function form(){
-  const form = document.getElementById('contactForm');
-  const dlg = document.getElementById('okDialog');
-  if(!form || !dlg) return;
-  form.addEventListener('submit', e => {
+// ---------- Reveal on scroll ----------
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold: .12});
+document.querySelectorAll('.reveal, .section-head, .svc, .card, .step, .sec, .client').forEach(el=>{
+  el.classList.add('reveal'); io.observe(el);
+});
+
+// ---------- File picker label ----------
+const fileInput = document.getElementById('archivo');
+if(fileInput){
+  fileInput.addEventListener('change', e=>{
+    const n = e.target.files?.length || 0;
+    const label = e.target.closest('.attach')?.querySelector('.l b');
+    if(label){ label.textContent = n ? `${n} archivo${n>1?'s':''} adjunto${n>1?'s':''}` : 'Adjuntar planos, RFQ o PID'; }
+  });
+}
+
+// ---------- Form submit (front-end demo) ----------
+const form = document.getElementById('rfqForm');
+if(form){
+  form.addEventListener('submit', e=>{
     e.preventDefault();
-    if(!form.checkValidity()){
-      form.reportValidity();
-      return;
-    }
-    if(typeof dlg.showModal === 'function'){
-      dlg.showModal();
-    } else {
-      alert('Mensaje enviado. Gracias.');
-    }
-    form.reset();
+    const btn = form.querySelector('button[type="submit"]');
+    const original = btn.innerHTML;
+    btn.innerHTML = 'Solicitud enviada · gracias';
+    btn.style.background = 'var(--good)';
+    btn.style.borderColor = 'var(--good)';
+    btn.disabled = true;
+    setTimeout(()=>{ btn.innerHTML = original; btn.disabled=false; btn.style.background=''; btn.style.borderColor=''; form.reset(); }, 3200);
   });
-})();
-
-// 8) Smooth scroll con offset por la nav sticky
-(function smoothScroll(){
-  // CSS scroll-behavior ya está activo; este listener añade offset al ancla
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const id = a.getAttribute('href');
-      if(id.length < 2) return;
-      const target = document.querySelector(id);
-      if(!target) return;
-      e.preventDefault();
-      const top = target.getBoundingClientRect().top + window.scrollY - 70;
-      window.scrollTo({top, behavior: 'smooth'});
-    });
-  });
-})();
-
-// 9) Console: crédito discreto
-console.log('%cVVC Consultoría · Sitio hecho con ♥ por ABDev', 'font-family:monospace;background:#0f1115;color:#f0a040;padding:6px 10px;border-radius:2px');
-
-// 10) Sistema Impeccable · edición inline + export JSON
-// Activar con: ?edit=1 en la URL  o  click en el botón flotante ✏️
-(function impeccable(){
-  const STORAGE_KEY = 'vvc-edits-v1';
-  const params = new URLSearchParams(location.search);
-  const autoEnable = params.get('edit') === '1';
-
-  // Estilos y elementos UI se inyectan al DOM
-  const fab = document.createElement('button');
-  fab.id = 'impFab';
-  fab.setAttribute('aria-label', 'Activar modo edición');
-  fab.innerHTML = '✏️';
-  document.body.appendChild(fab);
-
-  const panel = document.createElement('div');
-  panel.id = 'impPanel';
-  panel.innerHTML = `
-    <header>
-      <strong>Modo edición · VVC</strong>
-      <button class="close" aria-label="Cerrar panel">×</button>
-    </header>
-    <div id="impCount">0 cambios guardados en este navegador</div>
-    <div id="impActions">
-      <button class="impExport">💾 Exportar JSON</button>
-      <button class="impApply">📋 Copiar cambios</button>
-      <button class="impReset">↩ Reset</button>
-    </div>
-    <div class="hint">
-      <b>Doble-click</b> en cualquier texto para editarlo.<br>
-      <b>Enter</b> o <b>click fuera</b> para guardar.<br>
-      <b>Esc</b> para cancelar.<br>
-      Los cambios se guardan en este navegador. Expórtalos y mándamelos para aplicarlos al HTML permanente.
-    </div>
-  `;
-  document.body.appendChild(panel);
-
-  const toast = document.createElement('div');
-  toast.id = 'impToast';
-  document.body.appendChild(toast);
-
-  let edits = {};
-  try { edits = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e){ edits = {}; }
-  let enabled = false;
-
-  // Aplica los edits guardados al cargar
-  function applyStoredEdits(){
-    Object.entries(edits).forEach(([id, html])=>{
-      const el = document.querySelector(`[data-imp-id="${id}"]`);
-      if(el){
-        el.innerHTML = html;
-        el.setAttribute('data-imp-edited','');
-      }
-    });
-  }
-
-  // Marca todos los elementos editables
-  function setupEditable(){
-    // Selectores: cualquier texto del contenido (NO chrome)
-    const sel = [
-      'h1','h2','h3','h4','h5','h6',
-      'p', 'li',
-      'a.cta', '.cta',
-      '.eyebrow', '.mono',
-      '.svc-foot span', '.svc h3', '.svc .desc',
-      '.values h5', '.values span', '.values div',
-      '.sec h4', '.sec p', '.sec .n',
-      '.mod-side h4', '.mod-side p', '.mod-display', '.mod-desc', '.mod-list li',
-      '.cta-card .v', '.cta-card .l', '.cta-card .v a',
-      '.hero-stat .l', '.hero-stat .n',
-      '.leader-info h4', '.leader-info span', '.leader-info .sig',
-      '.contact-info .block .l', '.contact-info .block .v',
-      '.hero-top .tag', '.hero-top .coords', '.hero-kicker',
-      '.section-head h2', '.section-head p', '.section-num',
-      '.manifesto h3', '.manifesto p', '.manifesto .lead'
-    ].join(',');
-    const targets = document.querySelectorAll(sel);
-    let i = 0;
-    targets.forEach(el=>{
-      // Excluir SOLO chrome (botones flotantes, navbar, dialog)
-      if(el.closest('#impFab, #impPanel, #impToast, .wa-float, .topbar, .nav, dialog')) return;
-      // Excluir si no tiene texto visible
-      const text = (el.textContent || '').trim();
-      if(text.length < 2) return;
-      // Asignar ID único
-      if(!el.dataset.impId) el.dataset.impId = 'v' + (++i);
-      el.setAttribute('data-imp-editable','');
-      el.addEventListener('dblclick', startEdit);
-    });
-    console.log('[impeccable] ' + targets.length + ' elementos editables');
-  }
-
-  function startEdit(e){
-    if(!enabled) return;
-    const el = e.currentTarget;
-    if(el.contentEditable === 'true') return;
-    // Guardar HTML original (preserva <strong>, <em>, etc.) para poder cancelar con Esc
-    el.dataset.originalHtml = el.innerHTML;
-    el.contentEditable = 'true';
-    el.focus();
-    // seleccionar todo el texto
-    const range = document.createRange();
-    range.selectNodeContents(el);
-    const sel = window.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(range);
-    el.addEventListener('blur', ()=>finishEdit(el), {once:true});
-    el.addEventListener('keydown', ev=>{
-      if(ev.key === 'Escape'){
-        ev.preventDefault();
-        if(el.dataset.originalHtml !== undefined) el.innerHTML = el.dataset.originalHtml;
-        el.blur();
-      }
-      if(ev.key === 'Enter' && !ev.shiftKey && el.tagName !== 'TEXTAREA'){
-        ev.preventDefault();
-        el.blur();
-      }
-    }, {once:true});
-  }
-
-  function finishEdit(el){
-    el.contentEditable = 'false';
-    const id = el.dataset.impId;
-    const newHtml = el.innerHTML.trim();
-    const originalHtml = el.dataset.originalHtml || '';
-    if(newHtml !== originalHtml){
-      edits[id] = newHtml;
-      el.setAttribute('data-imp-edited','');
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(edits));
-      showToast('Cambio guardado · ' + Object.keys(edits).length + ' en total');
-    }
-    updateCount();
-  }
-
-  function updateCount(){
-    const n = Object.keys(edits).length;
-    document.getElementById('impCount').innerHTML = n === 0
-      ? '0 cambios guardados en este navegador'
-      : `<b>${n}</b> cambio${n===1?'':'s'} guardado${n===1?'':'s'} en este navegador`;
-  }
-
-  function enable(){
-    enabled = true;
-    document.body.classList.add('impeccable-on');
-    fab.classList.add('on');
-    fab.innerHTML = '👁️';
-    fab.setAttribute('aria-label', 'Salir de modo edición');
-    panel.classList.add('show');
-    setupEditable();
-    updateCount();
-  }
-
-  function disable(){
-    enabled = false;
-    document.body.classList.remove('impeccable-on');
-    fab.classList.remove('on');
-    fab.innerHTML = '✏️';
-    fab.setAttribute('aria-label', 'Activar modo edición');
-    panel.classList.remove('show');
-    document.querySelectorAll('[contenteditable="true"]').forEach(el=>{
-      el.contentEditable = 'false';
-    });
-  }
-
-  function showToast(msg){
-    toast.textContent = msg;
-    toast.classList.add('show');
-    clearTimeout(showToast._t);
-    showToast._t = setTimeout(()=>toast.classList.remove('show'), 2200);
-  }
-
-  // Exporta el JSON con todos los cambios
-  function exportJSON(){
-    const data = {
-      meta: {
-        site: 'victor.iepi.consulting',
-        exportedAt: new Date().toISOString(),
-        totalEdits: Object.keys(edits).length
-      },
-      edits: edits
-    };
-    const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `vvc-edits-${new Date().toISOString().slice(0,10)}.json`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    showToast('JSON exportado · revisa tu carpeta de descargas');
-  }
-
-  // Copia al portapapeles
-  async function copyToClipboard(){
-    const data = {
-      site: 'victor.iepi.consulting',
-      exportedAt: new Date().toISOString(),
-      edits: edits
-    };
-    const text = JSON.stringify(data, null, 2);
-    try{
-      await navigator.clipboard.writeText(text);
-      showToast('Cambios copiados al portapapeles');
-    }catch(e){
-      // fallback
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      document.body.appendChild(ta);
-      ta.select();
-      try{ document.execCommand('copy'); showToast('Cambios copiados al portapapeles'); }
-      catch(_){ showToast('No se pudo copiar · usa Exportar JSON'); }
-      document.body.removeChild(ta);
-    }
-  }
-
-  function resetEdits(){
-    const n = Object.keys(edits).length;
-    if(n === 0){ showToast('No hay cambios que limpiar'); return; }
-    if(!confirm(`¿Borrar ${n} cambio${n===1?'':'s'} local${n===1?'':'s'}? El HTML original volverá a verse.`)) return;
-    localStorage.removeItem(STORAGE_KEY);
-    showToast('Cambios limpiados · recargando...');
-    setTimeout(()=>location.reload(), 800);
-  }
-
-  // Event listeners
-  fab.addEventListener('click', ()=> enabled ? disable() : enable());
-  panel.querySelector('.close').addEventListener('click', disable);
-  panel.querySelector('.impExport').addEventListener('click', exportJSON);
-  panel.querySelector('.impApply').addEventListener('click', copyToClipboard);
-  panel.querySelector('.impReset').addEventListener('click', resetEdits);
-
-  // Inicializar
-  applyStoredEdits();
-  if(autoEnable) setTimeout(enable, 250);
-})();
+}
 </script>
 </body>
 </html>

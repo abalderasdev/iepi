@@ -2,6 +2,16 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/instrumentos",
+      "destination": "/instrumentos"
+    },
+    {
+      "source": "/instrumentos/:path*",
+      "destination": "/instrumentos/:path*"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -21,7 +31,7 @@
       ]
     },
     {
-      "source": "/assets/(.*)",
+      "source": "/(instrumentos|consultoria)/assets/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
