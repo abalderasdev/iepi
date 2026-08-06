@@ -1,7 +1,7 @@
-# iepi.consulting
+# victor.iepi.consulting
 
-Sitio principal de **IEPI Consultoría · Víctor Vargas Carrillo**.
-Desplegado en **Vercel** bajo el dominio personalizado **iepi.consulting**.
+Sitio de **VVC Consultoría · Víctor Vargas Carrillo**.
+Desplegado en **Vercel** bajo el subdominio **`victor.iepi.consulting`**.
 
 ---
 
@@ -21,8 +21,8 @@ Desplegado en **Vercel** bajo el dominio personalizado **iepi.consulting**.
 
 ## URLs
 
-- **Principal**: https://iepi.consulting/ → consultoría de Víctor
-- **Catálogo**: https://iepi.consulting/equipo → equipo de calibración en venta
+- **Principal**: https://victor.iepi.consulting/ → consultoría de Víctor
+- **Catálogo**: https://victor.iepi.consulting/equipo → equipo de calibración en venta
 
 ## Despliegue en Vercel
 
@@ -34,29 +34,27 @@ Desplegado en **Vercel** bajo el dominio personalizado **iepi.consulting**.
 5. Output directory: `.` (raíz)
 6. Click **Deploy**
 
-### 2) Asignar el dominio personalizado `iepi.consulting`
+### 2) Asignar el subdominio `victor.iepi.consulting`
 1. Project Settings → Domains
-2. Escribe `iepi.consulting` → Add
-3. Vercel te muestra los registros DNS a configurar
+2. Escribe `victor.iepi.consulting` → Add
+3. Vercel te muestra el CNAME a configurar (típicamente `cname.vercel-dns.com`)
 
-### 3) DNS en el proveedor del dominio
-Donde compraste `consulting` (Namecheap, GoDaddy, Google Domains, etc.):
+### 3) DNS en el proveedor del dominio `consulting`
 
 | Tipo | Nombre | Valor |
 |---|---|---|
-| CNAME | `www` | `cname.vercel-dns.com.` |
-| A | `@` | `76.76.21.21` |
+| CNAME | `victor` | `cname.vercel-dns.com.` |
 
-(También `A` secundario: `66.225.18.42` si tu proveedor pide dos registros A)
+(Si Vercel te asigna un valor distinto, usa ese.)
 
-Vercel verifica automáticamente y emite el certificado TLS.
+Vercel verifica automáticamente y emite el certificado TLS para `victor.iepi.consulting`.
 
 ## Verificación
 
-- [ ] `https://iepi.consulting/` carga con candado verde
+- [ ] `https://victor.iepi.consulting/` carga con candado verde
 - [ ] La foto de Víctor aparece en "Sobre mí"
 - [ ] El WhatsApp flotante abre chat con número correcto
-- [ ] `https://iepi.consulting/equipo` carga el catálogo de instrumentos
+- [ ] `https://victor.iepi.consulting/equipo` carga el catálogo de instrumentos
 - [ ] Las imágenes del equipo se ven correctamente
 
 ## Stack técnico
