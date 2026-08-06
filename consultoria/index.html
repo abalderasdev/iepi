@@ -898,7 +898,6 @@ body.impeccable-on [data-imp-editable][contenteditable="true"]{outline:2px solid
         <ul class="mod-list" id="modList">
           <li>Disponibilidad en CDMX y EdoMex</li>
           <li>Reporte escrito al cierre</li>
-          <li>Sin costo por desplazamiento local</li>
         </ul>
       </div>
 
@@ -924,7 +923,6 @@ body.impeccable-on [data-imp-editable][contenteditable="true"]{outline:2px solid
       <div class="section-num"><b>§ 04</b><span>— Cobertura</span></div>
       <div>
         <h2>CDMX y <em>Estado de México</em>.</h2>
-        <p style="margin-top:18px">Sin vuelos, sin viáticos. Sin la fatiga de un proyecto foráneo. Para que la cabeza esté en tu planta, no en el aeropuerto.</p>
       </div>
     </div>
 
@@ -943,7 +941,6 @@ body.impeccable-on [data-imp-editable][contenteditable="true"]{outline:2px solid
       <div class="section-num"><b>§ 05</b><span>— Sobre mí</span></div>
       <div>
         <h2>Toda una vida <em>en planta</em>.</h2>
-        <p style="margin-top:18px">De ayudante a director. De director a supervisor. La misma planta, los mismos problemas, vistos desde tres sillas distintas.</p>
       </div>
     </div>
 
@@ -1167,7 +1164,7 @@ body.impeccable-on [data-imp-editable][contenteditable="true"]{outline:2px solid
       price: 'A convenir',
       unit: 'según alcance',
       desc: 'Ideal para revisiones puntuales, una segunda opinión o un acompañamiento de medio día. Mínimo 4 horas continuas. Reporte escrito al cierre.',
-      list: ['Disponibilidad en CDMX y EdoMex','Reporte escrito al cierre','Sin costo por desplazamiento local']
+      list: ['Disponibilidad en CDMX y EdoMex','Reporte escrito al cierre']
     },
     dia: {
       price: 'A convenir',
@@ -1418,11 +1415,24 @@ console.log('%cVVC Consultoría · Sitio hecho con ♥ por ABDev', 'font-family:
     const id = el.dataset.impId;
     const newHtml = el.innerHTML.trim();
     const originalHtml = el.dataset.originalHtml || '';
+    // Robustez: ignorar edits vacios o solo-<br> (y restaurar HTML original)
+    const stripped = newHtml.replace(/<br\s*\/?>/gi, '').replace(/<[^>]+>/g, '').replace(/&nbsp;/gi, ' ').trim();
     if(newHtml !== originalHtml){
-      edits[id] = newHtml;
-      el.setAttribute('data-imp-edited','');
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(edits));
-      showToast('Cambio guardado · ' + Object.keys(edits).length + ' en total');
+      if(stripped.length === 0){
+        // Edit vacio o solo <br> -> NO guardar, restaurar original
+        el.innerHTML = originalHtml;
+        if(edits[id]){
+          delete edits[id];
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(edits));
+        }
+        el.removeAttribute('data-imp-edited');
+        showToast('Edit vacio descartado');
+      } else {
+        edits[id] = newHtml;
+        el.setAttribute('data-imp-edited','');
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(edits));
+        showToast('Cambio guardado · ' + Object.keys(edits).length + ' en total');
+      }
     }
     updateCount();
   }

@@ -1214,11 +1214,24 @@ if(form){
     const id = el.dataset.impId;
     const newHtml = el.innerHTML.trim();
     const originalHtml = el.dataset.originalHtml || '';
+    // Robustez: ignorar edits vacios o solo-<br> (y restaurar HTML original)
+    const stripped = newHtml.replace(/<br\s*\/?>/gi, '').replace(/<[^>]+>/g, '').replace(/&nbsp;/gi, ' ').trim();
     if(newHtml !== originalHtml){
-      edits[id] = newHtml;
-      el.setAttribute('data-imp-edited','');
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(edits));
-      showToast('Cambio guardado · ' + Object.keys(edits).length + ' en total');
+      if(stripped.length === 0){
+        // Edit vacio o solo <br> -> NO guardar, restaurar original
+        el.innerHTML = originalHtml;
+        if(edits[id]){
+          delete edits[id];
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(edits));
+        }
+        el.removeAttribute('data-imp-edited');
+        showToast('Edit vacio descartado');
+      } else {
+        edits[id] = newHtml;
+        el.setAttribute('data-imp-edited','');
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(edits));
+        showToast('Cambio guardado · ' + Object.keys(edits).length + ' en total');
+      }
     }
     updateCount();
   }
