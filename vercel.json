@@ -18,20 +18,8 @@
       "destination": "/instrumentos/:path*"
     },
     {
-      "source": "/instrumentos",
-      "destination": "/instrumentos"
-    },
-    {
-      "source": "/instrumentos/:path*",
-      "destination": "/instrumentos/:path*"
-    },
-    {
-      "source": "/consultoria",
-      "destination": "/consultoria"
-    },
-    {
-      "source": "/consultoria/:path*",
-      "destination": "/consultoria/:path*"
+      "source": "/:path*",
+      "destination": "/home/:path*"
     }
   ],
   "headers": [
@@ -44,7 +32,7 @@
       ]
     },
     {
-      "source": "/(instrumentos|consultoria)/assets/(.*)",
+      "source": "/(consultoria|instrumentos|home|assets)/.*",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
