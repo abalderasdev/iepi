@@ -539,10 +539,121 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
   .reveal{opacity:1;transform:none}
 }
 
-/* ---------- Print ---------- */
+/* ---------- Print / Dossier PDF ---------- */
+@page{
+  size:A4;
+  margin:18mm 16mm 20mm 16mm;
+}
+@page :first{
+  margin:0;
+}
 @media print{
-  .nav,.topbar,.wa-float,.strip{display:none}
-  body{background:#fff;color:#000}
+  /* Reset base para impresion */
+  html,body{background:#fff!important;color:#000!important}
+  body{font-family:'Fraunces',Georgia,'Times New Roman',serif;font-size:11pt;line-height:1.5}
+  h1,h2,h3,h4,h5,h6{font-family:'Inter Tight',-apple-system,sans-serif;color:#000}
+  a{color:#000;text-decoration:none}
+  *{box-shadow:none!important;animation:none!important;transition:none!important}
+
+  /* Ocultar chrome interactivo */
+  .nav,.topbar,.wa-float,.strip,.nav-toggle,.hero-actions,
+  .svc-foot a,.cta-card,.submit-row,.form-wrap,form,.form-status,
+  button:not(.print-only){display:none!important}
+
+  /* Portada: el hero se convierte en la primera pagina */
+  .hero{background:#fff!important;color:#000!important;padding:24mm 18mm;min-height:0;page-break-after:always}
+  .hero .grid-overlay{display:none}
+  .hero h1{font-size:38pt;line-height:1.05;letter-spacing:-0.02em;margin:8mm 0 6mm}
+  .hero h1 em{color:#c79b3e;font-style:italic}
+  .hero-kicker{color:#555;font-size:13pt;margin-bottom:14mm}
+  .hero-bottom{margin-top:18mm;display:grid;grid-template-columns:repeat(3,1fr);gap:8mm}
+  .hero-stat{text-align:left;border-top:1px solid #999;padding-top:4mm}
+  .hero-stat .n{font-size:24pt;font-weight:700;color:#c79b3e;font-family:'Inter Tight',sans-serif;line-height:1}
+  .hero-stat .l{font-size:9pt;color:#555;text-transform:uppercase;letter-spacing:.1em;margin-top:2mm;font-family:'Inter Tight',sans-serif}
+  .hero-top{display:none}
+  .hero-inner{display:block}
+  .hero-body p{font-size:13pt;color:#222;max-width:140mm;line-height:1.55}
+
+  /* Manifesto */
+  .manifesto{background:#fff!important;padding:12mm 0;page-break-after:always;border-top:1px solid #999;margin-top:0}
+  .manifesto h3{font-size:20pt;margin:0 0 6mm}
+  .manifesto h3 em{color:#c79b3e}
+  .manifesto .lead{font-size:12pt;color:#333;font-weight:500}
+  .manifesto .col p{color:#000;font-size:10.5pt}
+
+  /* Servicios */
+  #servicios{background:#fff!important;padding:8mm 0;page-break-after:always;border-top:0}
+  #servicios .section-head{margin-bottom:6mm}
+  #servicios h2{font-size:22pt;margin:0 0 4mm}
+  #servicios h2 em{color:#c79b3e}
+  #servicios .section-head p{font-size:11pt;color:#333}
+  .services{margin-top:4mm;gap:6mm}
+  .svc{
+    background:#fff!important;border:1px solid #999!important;
+    min-height:0!important;padding:6mm;page-break-inside:avoid;page-break-after:always;
+  }
+  .svc:last-child{page-break-after:auto}
+  .svc-head{padding:0 0 3mm!important;margin-bottom:3mm;border-bottom:1px solid #ccc}
+  .svc-head .tag{
+    background:#c79b3e!important;color:#fff!important;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;
+  }
+  .svc-head .num{color:#555}
+  .svc-body{padding:0!important}
+  .svc h3{font-size:16pt;margin:2mm 0 3mm}
+  .svc h3 em{color:#c79b3e}
+  .svc .desc{color:#222;font-size:10.5pt;margin:0}
+  .svc-list{margin:4mm 0 0!important;padding:0!important;grid-template-columns:1fr 1fr!important;gap:2mm 6mm}
+  .svc-list li{color:#000;font-size:10pt;page-break-inside:avoid}
+  .svc-list li::before{color:#c79b3e}
+  .svc-foot{padding:3mm 0 0!important;border-top:1px solid #ccc!important;color:#555;font-size:9pt;letter-spacing:.1em;margin-top:4mm;display:block!important}
+
+  /* Sectores */
+  .sectors-sec{background:#fff!important;padding:8mm 0;page-break-after:always;border-top:0}
+  .sectors-sec h2{font-size:20pt;margin:0 0 3mm}
+  .sectors-sec h2 em{color:#c79b3e}
+  .sector-grid{margin-top:4mm;grid-template-columns:repeat(3,1fr)!important;gap:0}
+  .sec{background:#fff!important;border:1px solid #999!important;padding:4mm;page-break-inside:avoid}
+  .sec h4{font-size:12pt;margin:2mm 0 1mm}
+  .sec p{font-size:9.5pt;color:#333;margin:0}
+  .sec .n{font-size:8pt;color:#c79b3e}
+
+  /* Sobre mi */
+  .about{background:#fff!important;padding:8mm 0;page-break-after:always;border-top:0}
+  .about h2{font-size:22pt;margin:0 0 4mm}
+  .about h2 em{color:#c79b3e}
+  .about-grid{grid-template-columns:1.4fr 1fr!important;gap:10mm}
+  .about .lead{font-size:12pt;color:#333}
+  .about p{font-size:10.5pt;color:#000}
+  .values{margin-top:6mm!important;grid-template-columns:repeat(3,1fr)!important;gap:4mm}
+  .values div{padding:3mm;border:1px solid #ccc}
+  .values h5{font-size:10pt;margin:0 0 1mm}
+  .values span{font-size:9pt;color:#555}
+  .leader .photo img{max-width:60mm;border:1px solid #999;padding:2mm;background:#fff}
+  .photo-tag,.photo-meta{display:none}
+  .leader-info{padding:3mm 0 0}
+  .leader-info h4{font-size:12pt;margin:0}
+  .leader-info span{font-size:9.5pt;color:#555}
+
+  /* Contacto */
+  .contact{background:#fff!important;padding:8mm 0;border-top:0}
+  .contact h2{font-size:22pt;margin:0 0 4mm}
+  .contact h2 em{color:#c79b3e}
+  .contact .section-head p{font-size:11pt;color:#333}
+  .mod-side{color:#000!important;padding:4mm;border:1px solid #ccc;margin-top:4mm}
+  .mod-side h4{font-size:13pt;color:#000!important;margin:0 0 2mm}
+  .mod-side p{color:#000!important;font-size:10.5pt}
+  .mod-side strong{color:#c79b3e}
+
+  /* Footer simplificado */
+  footer{background:#fff!important;color:#000!important;padding:6mm 0 0;border-top:1px solid #999;margin-top:6mm}
+  .footer-grid{padding-bottom:4mm;margin-bottom:4mm;display:grid!important;grid-template-columns:1.4fr 1fr 1fr!important;gap:6mm}
+  .footer-brand p{color:#000!important;font-size:9.5pt;margin:2mm 0 0}
+  .footer-grid .mark{background:#000!important;color:#fff!important}
+  .footer-grid h6{color:#c79b3e!important;font-size:8pt}
+  .footer-grid a,.footer-grid li{color:#000!important;font-size:9.5pt}
+  .footer-bottom{color:#000!important;padding-top:3mm;border-top:1px solid #ccc;font-size:8.5pt;display:flex!important;justify-content:space-between;flex-wrap:wrap;gap:2mm}
+  .footer-bottom .pulse{color:#c79b3e!important}
 }
 </style>
 </head>
@@ -581,6 +692,10 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
       <a href="/instrumentos/">Equipo en venta</a>
       <a href="#contacto">Contacto</a>
     </div>
+    <button type="button" class="cta ghost" id="printBtn" aria-label="Descargar dossier PDF">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+      PDF
+    </button>
     <a href="https://wa.me/525536174459?text=Hola%20V%C3%ADctor" class="cta wa" target="_blank" rel="noopener">
       Escríbeme
       <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
@@ -1088,7 +1203,24 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
   });
 })();
 
-// 8) Smooth scroll con offset por la nav sticky
+// 8) Boton 'PDF' en la nav: descarga el dossier via window.print()
+(function pdfDownload(){
+  const btn = document.getElementById('printBtn');
+  if(!btn) return;
+  // Actualizar el document.title al imprimir para que el PDF tenga nombre decente
+  const originalTitle = document.title;
+  window.addEventListener('beforeprint', () => {
+    document.title = 'VVC Consultoria - Dossier Victor Vargas Carrillo';
+  });
+  window.addEventListener('afterprint', () => {
+    document.title = originalTitle;
+  });
+  btn.addEventListener('click', () => {
+    window.print();
+  });
+})();
+
+
 (function smoothScroll(){
   // CSS scroll-behavior ya está activo; este listener añade offset al ancla
   document.querySelectorAll('a[href^="#"]').forEach(a => {
