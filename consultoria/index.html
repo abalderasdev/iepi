@@ -215,6 +215,11 @@ button{font-family:inherit;cursor:pointer;border:0;background:transparent;color:
 .hero-actions .cta.ghost{background:transparent;color:var(--bg);border-color:color-mix(in oklab, white 40%, transparent)}
 .hero-actions .cta.ghost:hover{background:var(--bg);color:var(--ink);border-color:var(--bg)}
 .hero-actions .cta.ghost::after{background:var(--bg)}
+.cta.wa{background:#25d366;border-color:#25d366;color:#fff}
+.cta.wa:hover{background:#1ebe5b;border-color:#1ebe5b;color:#fff}
+.cta.wa::after{background:#1ebe5b}
+.nav .cta.wa{background:#25d366;border-color:#25d366;color:#fff;padding:11px 18px}
+.nav .cta.wa:hover{background:#1ebe5b;border-color:#1ebe5b}
 @media (max-width:820px){.hero-body{grid-template-columns:1fr;gap:24px}}
 
 .hero-bottom{
@@ -257,7 +262,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:transparent;color:
 #servicios{background:var(--bg-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .services{display:grid;grid-template-columns:repeat(12, 1fr);gap:24px;margin-top:56px;container-type:inline-size}
 .svc{
-  grid-column:span 6;background:var(--paper);border:1px solid var(--rule);position:relative;
+  grid-column:span 4;background:var(--paper);border:1px solid var(--rule);position:relative;
   display:grid;grid-template-rows:auto 1fr auto;min-height:420px;overflow:hidden;
   transition:transform .35s var(--ease-out), box-shadow .35s, border-color .25s
 }
@@ -282,6 +287,10 @@ button{font-family:inherit;cursor:pointer;border:0;background:transparent;color:
 .svc-foot a{color:var(--ink);display:inline-flex;gap:8px;align-items:center;transition:gap .2s, color .2s}
 .svc-foot a:hover{gap:14px;color:var(--accent-2)}
 
+@container (max-width: 960px){
+  .svc{grid-column:span 6!important}
+  .svc-list{grid-template-columns:1fr!important}
+}
 @container (max-width: 760px){
   .svc{grid-column:span 12!important}
   .svc-list{grid-template-columns:1fr!important}
@@ -576,8 +585,8 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
       <a href="/instrumentos/">Equipo en venta</a>
       <a href="#contacto">Contacto</a>
     </div>
-    <a href="#contacto" class="cta">
-      Agendar llamada
+    <a href="https://wa.me/525536174459?text=Hola%20V%C3%ADctor" class="cta wa" target="_blank" rel="noopener">
+      Escríbeme
       <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
@@ -607,10 +616,10 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
       <div class="hero-body">
         <p>Servicios de <strong>Montaje</strong> y <strong>Supervisión</strong> en proyectos eléctricos, instrumentación, control, fibra óptica y sistemas de fuego y gas.</p>
         <div class="hero-actions">
-          <a href="#contacto" class="cta">Agendar llamada de 20 min
+          <a href="https://wa.me/525536174459?text=Hola%20V%C3%ADctor" class="cta wa" target="_blank" rel="noopener">
+            Escríbeme por WhatsApp
             <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
           </a>
-          <a href="https://wa.me/525536174459?text=Hola%20V%C3%ADctor%2C%20me%20interesa%20agendar%20una%20llamada%20sobre%20supervisi%C3%B3n%20industrial." class="cta ghost" target="_blank" rel="noopener">WhatsApp directo</a>
         </div>
       </div>
 
