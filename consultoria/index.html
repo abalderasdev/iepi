@@ -262,7 +262,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:transparent;color:
 #servicios{background:var(--bg-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .services{display:grid;grid-template-columns:repeat(12, 1fr);gap:24px;margin-top:56px;container-type:inline-size}
 .svc{
-  grid-column:span 4;background:var(--paper);border:1px solid var(--rule);position:relative;
+  grid-column:span 6;background:var(--paper);border:1px solid var(--rule);position:relative;
   display:grid;grid-template-rows:auto 1fr auto;min-height:420px;overflow:hidden;
   transition:transform .35s var(--ease-out), box-shadow .35s, border-color .25s
 }
@@ -288,10 +288,6 @@ button{font-family:inherit;cursor:pointer;border:0;background:transparent;color:
 .svc-foot a:hover{gap:14px;color:var(--accent-2)}
 
 @container (max-width: 960px){
-  .svc{grid-column:span 6!important}
-  .svc-list{grid-template-columns:1fr!important}
-}
-@container (max-width: 760px){
   .svc{grid-column:span 12!important}
   .svc-list{grid-template-columns:1fr!important}
 }
@@ -659,10 +655,10 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
 <section class="section" id="servicios">
   <div class="container">
     <div class="section-head">
-      <div class="section-num"><b>§ 01</b><span>— Servicios de supervisión</span></div>
+      <div class="section-num"><b>§ 01</b><span>— Servicios de supervisión y Montaje</span></div>
       <div>
-        <h2>Tres formas <em>de entrar</em> a tu proyecto.</h2>
-        <p style="margin-top:18px">Tres frentes, una sola firma. Si tu proyecto no está en ninguno de los tres, te lo digo en lugar de inventarme un servicio.</p>
+        <h2>Cuatro formas <em>de entrar</em> a tu proyecto.</h2>
+        <p style="margin-top:18px">Cuatro frentes, una sola firma. Si tu proyecto no está en ninguno de los cuatro, te lo digo en lugar de inventarme un servicio.</p>
       </div>
     </div>
 
@@ -700,6 +696,9 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
           <li>Soportería y tendido</li>
           <li>Cableado estructurado</li>
           <li>Fibra óptica · F&amp;G</li>
+          <li>Montaje</li>
+          <li>Actuadores manuales y eléctricos</li>
+          <li>Valvular</li>
         </ul>
         <footer class="svc-foot"><span>ENTREGABLE · REGISTRO FOTOGRÁFICO + REPORTE</span><a href="#contacto">Cotizar →</a></footer>
       </article>
@@ -720,6 +719,22 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
           <li>Dossier firmado</li>
         </ul>
         <footer class="svc-foot"><span>ENTREGABLE · HOJAS DE PRUEBA FIRMADAS</span><a href="#contacto">Cotizar →</a></footer>
+      </article>
+
+      <article class="svc reveal">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <header class="svc-head"><span class="num">SVC-04</span><span class="tag">Levantamiento</span></header>
+        <div class="svc-body">
+          <h3>Levantamientos <em>en planta</em></h3>
+          <p class="desc">Levantamientos necesarios para obtener toda la información requerida para iniciar un proyecto. Condiciones de operación, ubicación de instrumentos, válvulas y actuadores, recorridos de tuberías y mediciones para acoplamiento.</p>
+        </div>
+        <ul class="svc-list">
+          <li>Condiciones de operación</li>
+          <li>Instrumentos, válvulas y actuadores</li>
+          <li>Recorridos de tuberías</li>
+          <li>Mediciones para acoplamiento</li>
+        </ul>
+        <footer class="svc-foot"><span>ENTREGABLE · INFORME TÉCNICO + PLANOS DE CAMPO</span><a href="#contacto">Cotizar →</a></footer>
       </article>
 
     </div>
