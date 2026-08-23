@@ -1203,20 +1203,13 @@ footer{background:oklch(0.12 0.012 255);color:color-mix(in oklab, var(--bg) 75%,
   });
 })();
 
-// 8) Boton 'PDF' en la nav: descarga el dossier via window.print()
+// 8) Boton 'PDF' en la nav: abre el resume en PDF para descargar
 (function pdfDownload(){
   const btn = document.getElementById('printBtn');
   if(!btn) return;
-  // Actualizar el document.title al imprimir para que el PDF tenga nombre decente
-  const originalTitle = document.title;
-  window.addEventListener('beforeprint', () => {
-    document.title = 'VVC Consultoria - Dossier Victor Vargas Carrillo';
-  });
-  window.addEventListener('afterprint', () => {
-    document.title = originalTitle;
-  });
-  btn.addEventListener('click', () => {
-    window.print();
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    window.open('assets/resume-vvc.pdf', '_blank', 'noopener');
   });
 })();
 
